@@ -47,6 +47,8 @@ header.scrolled{background:rgba(6,13,24,.95);box-shadow:0 8px 30px rgba(0,0,0,.3
 .links a:hover:after,.links a.active:after{width:100%}
 .lang-sel{width:auto;flex:none;background:rgba(255,255,255,.05);border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:5px 9px;font-size:12.5px;outline:none;cursor:pointer;font-family:inherit}
 .lang-sel option{background:#0a1c30;color:var(--tx)}
+.lang-wrap{display:inline-flex;align-items:center;gap:7px;color:var(--mu)}
+.lang-wrap svg{flex:none}
 /* page hero */
 .hero{position:relative;padding:110px 0 84px;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url("image/hero-race.jpg") center/cover no-repeat;animation:heroZoom 18s ease-in-out infinite alternate}
@@ -121,13 +123,13 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:40px 0 
 .rv{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1);transition-delay:var(--d,0s)}
 .rv.on{opacity:1;transform:none}
 @media (max-width:1024px){.g4,.g3,.pkgs{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(4,1fr)}}
-@media (max-width:760px){section{padding:62px 0}.menu-btn{display:block;margin-left:auto}.links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;padding:12px 0 8px}.links.open{display:flex}.links a{padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.05)}.links a:after{display:none}.lang-sel{margin-left:auto;margin-top:2px}.hero{padding:84px 0 60px}.hero .meta{width:100%}}
+@media (max-width:760px){section{padding:62px 0}.menu-btn{display:block;margin-left:auto}.links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;padding:12px 0 8px}.links.open{display:flex}.links a{padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.05)}.links a:after{display:none}.lang-wrap{margin-left:auto;margin-top:2px}.hero{padding:84px 0 60px}.hero .meta{width:100%}}
 @media (max-width:560px){.g4,.g3,.pkgs,.steps,.g2{grid-template-columns:1fr}.btn{width:100%}.hero-acts{flex-direction:column}.chain{flex-direction:column;align-items:center}.chain-i .ar{transform:rotate(90deg)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header id="hdr"><div class="c nav"><a class="brand" href="index.html"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b data-i18n="brand.b">横琴意诚格物文体发展有限公司</b><span>HENGQIN YICHENG GEWU</span></div></a><button class="menu-btn" id="menuBtn" type="button" aria-label="切换导航菜单" aria-expanded="false">☰</button><nav class="links" id="navLinks" aria-label="主导航"><a href="index.html" data-i18n="nav.home">首页</a><a href="#bg" data-i18n="nav.bg">赛事定位</a><a href="#innovation" data-i18n="nav.in">核心创新</a><a href="#format" data-i18n="nav.fmt">赛制设计</a><a href="#packages" data-i18n="nav.pk">招商权益</a><a href="#teamplay" data-i18n="nav.tp">品牌战队</a><a href="#media" data-i18n="nav.md">传播计划</a><a href="#cooperate" data-i18n="nav.cp">联系合作</a></nav><select class="lang-sel" id="langSel" aria-label="Language"><option value="zh-CN">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option><option value="nl">Nederlands</option></select></div></header>
+<header id="hdr"><div class="c nav"><a class="brand" href="index.html"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b data-i18n="brand.b">横琴意诚格物文体发展有限公司</b><span>HENGQIN YICHENG GEWU</span></div></a><button class="menu-btn" id="menuBtn" type="button" aria-label="切换导航菜单" aria-expanded="false">☰</button><nav class="links" id="navLinks" aria-label="主导航"><a href="index.html" data-i18n="nav.home">首页</a><a href="#bg" data-i18n="nav.bg">赛事定位</a><a href="#innovation" data-i18n="nav.in">核心创新</a><a href="#format" data-i18n="nav.fmt">赛制设计</a><a href="#packages" data-i18n="nav.pk">招商权益</a><a href="#teamplay" data-i18n="nav.tp">品牌战队</a><a href="#media" data-i18n="nav.md">传播计划</a><a href="#cooperate" data-i18n="nav.cp">联系合作</a></nav><span class="lang-wrap"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/></svg><select class="lang-sel" id="langSel" aria-label="Language"><option value="zh-CN">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option><option value="nl">Nederlands</option></select></span></div></header>
 
 <main>
 <section class="hero" id="top">
