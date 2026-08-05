@@ -61,8 +61,7 @@ header.scrolled{background:rgba(6,13,24,.95);box-shadow:0 8px 30px rgba(0,0,0,.3
 /* hero */
 @keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.14)}}
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 66px;overflow:hidden}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity 1.4s ease;animation:heroZoom 18s ease-in-out infinite alternate}
-.hero-video.on{opacity:1}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:1;animation:heroZoom 18s ease-in-out infinite alternate}
 .hero-bg{position:absolute;inset:0;background:url("image/hero-race.jpg") center/cover no-repeat;animation:heroZoom 18s ease-in-out infinite alternate;z-index:0}
 .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,11,20,.55),rgba(5,11,20,.35) 40%,rgba(5,11,20,.92) 100%),linear-gradient(90deg,rgba(5,11,20,.55),transparent 55%);z-index:2}
 .hero-in{position:relative;z-index:3}
@@ -225,7 +224,7 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 
 <main>
 <section class="hero" id="home">
-<video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="image/hero-qinyong-poster.jpg" aria-hidden="true" tabindex="-1"><source src="image/hero-qinyong.mp4" type="video/mp4"></video>
+<video class="hero-video" id="heroVideo" autoplay muted loop playsinline webkit-playsinline="true" x5-video-player-type="h5" x5-playsinline="" preload="auto" poster="image/hero-qinyong-poster.jpg" aria-hidden="true" tabindex="-1"><source src="image/hero-qinyong.mp4" type="video/mp4"></video>
 <div class="hero-bg" role="img" aria-label="龙舟竞渡赛事现场"></div>
 <div class="hero-veil"></div>
 <div class="c hero-in">
@@ -750,11 +749,14 @@ const y=window.scrollY;hdr.classList.toggle("scrolled",y>10);topBtn.classList.to
 topBtn.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 const heroVideo=$("#heroVideo");
 if(heroVideo){
-heroVideo.addEventListener("canplay",()=>heroVideo.classList.add("on"));
+const tryPlay=()=>{if($("#vmodal").classList.contains("on"))return;const p=heroVideo.play();if(p&&p.catch)p.catch(()=>{})};
+heroVideo.addEventListener("canplay",tryPlay);
 heroVideo.addEventListener("error",()=>heroVideo.remove());
 heroVideo.addEventListener("click",vOpen);
+document.addEventListener("touchstart",()=>tryPlay(),{once:true,passive:true});
+document.addEventListener("click",()=>tryPlay(),{once:true,passive:true});
 const heroSec=$("#home");
-const vo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)heroVideo.play().catch(()=>{});else heroVideo.pause()}),{threshold:.05});
+const vo=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)tryPlay();else heroVideo.pause()}),{threshold:.05});
 vo.observe(heroSec);
 }
 function vOpen(){
