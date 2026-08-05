@@ -101,6 +101,21 @@ header.scrolled{background:rgba(6,13,24,.95);box-shadow:0 8px 30px rgba(0,0,0,.3
 .rp-row b{font-weight:700;text-align:right}
 .rp-row b i{font-style:normal;font-weight:500;color:var(--mu);font-size:12px;margin-left:8px}
 .res-panel .btn{margin-top:22px;width:100%;position:relative}
+/* dragon3 sponsorship */
+.d3-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:stretch}
+.d3-intro h3{font-size:clamp(20px,2.8vw,28px);font-weight:800;margin-bottom:14px;line-height:1.4}
+.d3-intro h3 em{font-style:normal;color:var(--gold2)}
+.d3-intro>p{color:var(--mu);font-size:15px;margin-bottom:22px}
+.d3-contact{position:relative;border-radius:20px;padding:32px 28px;border:1px solid rgba(56,217,255,.3);background:linear-gradient(165deg,rgba(56,217,255,.08),rgba(233,180,76,.06) 60%,rgba(255,255,255,.02));overflow:hidden}
+.d3-contact:before{content:"";position:absolute;left:-70px;bottom:-70px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(56,217,255,.18),transparent 65%)}
+.d3-contact h4{font-size:17px;letter-spacing:.1em;color:var(--cy);margin-bottom:18px;position:relative}
+.d3-row{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.09);position:relative}
+.d3-row:last-of-type{border-bottom:none}
+.d3-row span{color:var(--mu);font-size:14px}
+.d3-row b{font-weight:700;text-align:right}
+.d3-acts{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;position:relative}
+.d3-acts .btn{flex:1;min-width:160px}
+@media (max-width:1024px){.d3-wrap{grid-template-columns:1fr}}
 /* booking */
 #booking{background:radial-gradient(900px 420px at 50% 0%,rgba(56,217,255,.06),transparent 60%)}
 .bk-wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:40px;align-items:start}
@@ -235,7 +250,7 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 </style>
 </head>
 <body>
-<header id="hdr"><div class="c nav"><div class="brand"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b data-i18n="brand.b">横琴意诚格物文体发展有限公司</b><span>HENGQIN YICHENG GEWU</span></div></div><button class="menu-btn" id="menuBtn" type="button" aria-label="切换导航菜单" aria-expanded="false">☰</button><nav class="links" id="navLinks" aria-label="主导航"><a href="#home" data-i18n="nav.home">首页</a><a href="#services" data-i18n="nav.services">核心业务</a><a href="#gallery" data-i18n="nav.gallery">赛事风采</a><a href="#game" data-i18n="nav.game">互动体验</a><a href="#booking" data-i18n="nav.booking">课程预约</a><a href="#contact" data-i18n="nav.contact">联系我们</a></nav><select class="lang-sel" id="langSel" aria-label="Language"><option value="zh-CN">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option></select><a class="btn btn-gold btn-sm nav-cta" href="#booking" data-i18n="nav.cta">立即预约</a></div></header>
+<header id="hdr"><div class="c nav"><div class="brand"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b data-i18n="brand.b">横琴意诚格物文体发展有限公司</b><span>HENGQIN YICHENG GEWU</span></div></div><button class="menu-btn" id="menuBtn" type="button" aria-label="切换导航菜单" aria-expanded="false">☰</button><nav class="links" id="navLinks" aria-label="主导航"><a href="#home" data-i18n="nav.home">首页</a><a href="#services" data-i18n="nav.services">核心业务</a><a href="#gallery" data-i18n="nav.gallery">赛事风采</a><a href="#game" data-i18n="nav.game">互动体验</a><a href="#dragon3" data-i18n="nav.sponsor">赛事招商</a><a href="#booking" data-i18n="nav.booking">课程预约</a><a href="#contact" data-i18n="nav.contact">联系我们</a></nav><select class="lang-sel" id="langSel" aria-label="Language"><option value="zh-CN">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option></select><a class="btn btn-gold btn-sm nav-cta" href="#booking" data-i18n="nav.cta">立即预约</a></div></header>
 
 <main>
 <section class="hero" id="home">
@@ -246,7 +261,7 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 <div class="kicker">HENGQIN · TIANMU QINTAI</div>
 <h1><span data-i18n="hero.t1">横琴天沐琴台</span><br/><span data-i18n="hero.t2">龙舟预约</span></h1>
 <p class="lead" data-i18n="hero.lead">龙舟课程 · 企业团建 · 青少年培训 · 赛事承办。依托天沐琴台水域场景与专业教练团队,为企业与个人提供安全、专业、沉浸式的水上龙舟体验。</p>
-<div class="hero-acts"><a class="btn btn-gold" href="#booking" data-i18n="nav.cta">立即预约</a><button class="btn btn-line" id="open" type="button" data-i18n="hero.cta2">添加企业微信</button></div>
+<div class="hero-acts"><a class="btn btn-gold" href="#booking" data-i18n="nav.cta">立即预约</a><button class="btn btn-line" id="open" type="button" data-i18n="hero.cta2">添加企业微信</button><a class="btn btn-line" href="#dragon3" data-i18n="hero.cta3">第三届龙抬头 · 招商</a></div>
 <ul class="trust"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.tr1">专业教练团队</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.tr2">安全保障体系</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.tr3">横琴天沐琴台场景</span></li></ul>
 </div>
 <div class="hero-stats">
@@ -257,6 +272,29 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 </div>
 </div>
 </section>
+
+<section id="dragon3"><div class="c">
+<div class="tt rv"><span class="kicker">DRAGON RAISES HEAD · SPONSORSHIP</span><h2 data-i18n="d3.title">第三届横琴「龙抬头」小龙邀请赛 · 招商开放</h2><p data-i18n="d3.sub">品牌系列赛事,连续两届成功举办,第三届现已启动筹备与招商</p><div class="line"></div></div>
+<div class="d3-wrap">
+<div class="d3-intro rv">
+<h3><span data-i18n="d3.h">琴澳文旅热点</span><em data-i18n="d3.h2"> · 水上赛事旗舰 IP</em></h3>
+<p data-i18n="d3.p">横琴「龙抬头」小龙邀请赛是横琴粤澳深度合作区自主品牌体育赛事。首届与第二届已连续成功举办,获政府批复支持与媒体专访报道,琴澳两地队伍同场竞渡。第三届赛事现已开放招商合作,诚邀品牌冠名、联合主办与现场合作。</p>
+<ul class="feat">
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="d3.f1t">冠名赞助</b><span data-i18n="d3.f1d">赛事冠名权、主视觉露出、媒体矩阵传播</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="d3.f2t">联合主办</b><span data-i18n="d3.f2d">品牌深度联动,共享赛事 IP 影响力</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="d3.f3t">指定用品/服务</b><span data-i18n="d3.f3d">现场体验植入与展位合作</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="d3.f4t">现场展位</b><span data-i18n="d3.f4d">文旅市集、互动展区、观众引流</span></div></li>
+</ul>
+</div>
+<div class="d3-contact rv" style="--d:.1s">
+<h4 data-i18n="d3.ct">招商合作通道</h4>
+<div class="d3-row"><span data-i18n="d3.row1l">招商热线</span><b>+86 13168677659</b></div>
+<div class="d3-row"><span data-i18n="d3.row2l">商务邮箱</span><b>hqycgw@y163.com</b></div>
+<div class="d3-row"><span data-i18n="d3.row3l">对接方式</span><b data-i18n="d3.row3v">企业微信 / 公众号 / 电话</b></div>
+<div class="d3-acts"><button type="button" class="btn btn-gold wc-btn" data-i18n="d3.btn">添加企业微信洽谈</button><a class="btn btn-line" href="tel:+8613168677659" data-i18n="d3.btn2">电话咨询</a></div>
+</div>
+</div>
+</div></section>
 
 <section id="services"><div class="c">
 <div class="tt rv"><span class="kicker">OUR SERVICES</span><h2 data-i18n="sv.title">核心业务</h2><p data-i18n="sv.sub">四大模块覆盖课程体验、企业活动与专业赛事服务</p><div class="line"></div></div>
@@ -454,7 +492,16 @@ const I18N={
 "ftr.ch":"联系我们","ftr.c1":"电话:+86 13168677659","ftr.c2":"邮箱:hqycgw@y163.com","ftr.c3":"地址:珠海横琴粤澳深度合作区<br/>环岛东路3000号国际商务中心8楼8042",
 "ftr.copy":"© 2026 横琴意诚格物文体发展有限公司 · 版权所有","ftr.top":"返回顶部 ↑",
 "mo.t":"请添加企业微信完成预约确认","mo.p":"长按或截图识别二维码,即可与顾问对接预约时间与活动方案。","mo.copy":"复制预约信息","mo.close":"关闭",
-"js.name":"请输入您的姓名","js.phone":"请输入正确的中国大陆11位或澳门8位手机号","js.date":"预约日期不能早于今天","js.type":"请选择预约类型","js.people":"参与人数需在1-200之间","js.submitting":"正在提交…","js.submit":"提交预约","js.ok":"预约已提交,顾问将尽快与您联系","js.fail":"邮件发送失败,已为您打开企业微信预约","js.copyok":"✓ 预约信息已复制,请粘贴到企业微信","js.sumt":"【预约信息】","js.sumname":"姓名","js.sumphone":"手机","js.sumtype":"预约类型","js.sumdate":"日期","js.sumpeople":"人数","js.sumwechat":"微信号","js.sumremark":"备注","js.sumfail":"邮件发送失败,请通过企业微信完成预约"
+"js.name":"请输入您的姓名","js.phone":"请输入正确的中国大陆11位或澳门8位手机号","js.date":"预约日期不能早于今天","js.type":"请选择预约类型","js.people":"参与人数需在1-200之间","js.submitting":"正在提交…","js.submit":"提交预约","js.ok":"预约已提交,顾问将尽快与您联系","js.fail":"邮件发送失败,已为您打开企业微信预约","js.copyok":"✓ 预约信息已复制,请粘贴到企业微信","js.sumt":"【预约信息】","js.sumname":"姓名","js.sumphone":"手机","js.sumtype":"预约类型","js.sumdate":"日期","js.sumpeople":"人数","js.sumwechat":"微信号","js.sumremark":"备注","js.sumfail":"邮件发送失败,请通过企业微信完成预约",
+"nav.sponsor":"赛事招商","hero.cta3":"第三届龙抬头 · 招商",
+"d3.title":"第三届横琴「龙抬头」小龙邀请赛 · 招商开放","d3.sub":"品牌系列赛事,连续两届成功举办,第三届现已启动筹备与招商",
+"d3.h":"琴澳文旅热点","d3.h2":" · 水上赛事旗舰 IP",
+"d3.p":"横琴「龙抬头」小龙邀请赛是横琴粤澳深度合作区自主品牌体育赛事。首届与第二届已连续成功举办,获政府批复支持与媒体专访报道,琴澳两地队伍同场竞渡。第三届赛事现已开放招商合作,诚邀品牌冠名、联合主办与现场合作。",
+"d3.f1t":"冠名赞助","d3.f1d":"赛事冠名权、主视觉露出、媒体矩阵传播",
+"d3.f2t":"联合主办","d3.f2d":"品牌深度联动,共享赛事 IP 影响力",
+"d3.f3t":"指定用品/服务","d3.f3d":"现场体验植入与展位合作",
+"d3.f4t":"现场展位","d3.f4d":"文旅市集、互动展区、观众引流",
+"d3.ct":"招商合作通道","d3.row1l":"招商热线","d3.row2l":"商务邮箱","d3.row3l":"对接方式","d3.row3v":"企业微信 / 公众号 / 电话","d3.btn":"添加企业微信洽谈","d3.btn2":"电话咨询"
 },
 "zh-Hant":{
 "meta.title":"橫琴意誠格物｜龍舟課程預約｜企業團建｜水上賽事服務",
@@ -507,7 +554,16 @@ const I18N={
 "ftr.ch":"聯繫我們","ftr.c1":"電話:+86 13168677659","ftr.c2":"郵箱:hqycgw@y163.com","ftr.c3":"地址:珠海橫琴粵澳深度合作區<br/>環島東路3000號國際商務中心8樓8042",
 "ftr.copy":"© 2026 橫琴意誠格物文體發展有限公司 · 版權所有","ftr.top":"返回頂部 ↑",
 "mo.t":"請添加企業微信完成預約確認","mo.p":"長按或截圖識別二維碼,即可與顧問對接預約時間與活動方案。","mo.copy":"複製預約信息","mo.close":"關閉",
-"js.name":"請輸入您的姓名","js.phone":"請輸入正確的中國大陸11位或澳門8位手機號","js.date":"預約日期不能早於今天","js.type":"請選擇預約類型","js.people":"參與人數需在1-200之間","js.submitting":"正在提交…","js.submit":"提交預約","js.ok":"預約已提交,顧問將盡快與您聯繫","js.fail":"郵件發送失敗,已為您打開企業微信預約","js.copyok":"✓ 預約信息已複製,請粘貼到企業微信","js.sumt":"【預約信息】","js.sumname":"姓名","js.sumphone":"手機","js.sumtype":"預約類型","js.sumdate":"日期","js.sumpeople":"人數","js.sumwechat":"微信號","js.sumremark":"備註","js.sumfail":"郵件發送失敗,請通過企業微信完成預約"
+"js.name":"請輸入您的姓名","js.phone":"請輸入正確的中國大陸11位或澳門8位手機號","js.date":"預約日期不能早於今天","js.type":"請選擇預約類型","js.people":"參與人數需在1-200之間","js.submitting":"正在提交…","js.submit":"提交預約","js.ok":"預約已提交,顧問將盡快與您聯繫","js.fail":"郵件發送失敗,已為您打開企業微信預約","js.copyok":"✓ 預約信息已複製,請粘貼到企業微信","js.sumt":"【預約信息】","js.sumname":"姓名","js.sumphone":"手機","js.sumtype":"預約類型","js.sumdate":"日期","js.sumpeople":"人數","js.sumwechat":"微信號","js.sumremark":"備註","js.sumfail":"郵件發送失敗,請通過企業微信完成預約",
+"nav.sponsor":"賽事招商","hero.cta3":"第三屆龍抬頭 · 招商",
+"d3.title":"第三屆橫琴「龍抬頭」小龍邀請賽 · 招商開放","d3.sub":"品牌系列賽事,連續兩屆成功舉辦,第三屆現已啟動籌備與招商",
+"d3.h":"琴澳文旅熱點","d3.h2":" · 水上賽事旗艦 IP",
+"d3.p":"橫琴「龍抬頭」小龍邀請賽是橫琴粵澳深度合作區自主品牌體育賽事。首屆與第二屆已連續成功舉辦,獲政府批覆支持與媒體專訪報道,琴澳兩地隊伍同場競渡。第三屆賽事現已開放招商合作,誠邀品牌冠名、聯合主辦與現場合作。",
+"d3.f1t":"冠名贊助","d3.f1d":"賽事冠名權、主視覺露出、媒體矩陣傳播",
+"d3.f2t":"聯合主辦","d3.f2d":"品牌深度聯動,共享賽事 IP 影響力",
+"d3.f3t":"指定用品/服務","d3.f3d":"現場體驗植入與展位合作",
+"d3.f4t":"現場展位","d3.f4d":"文旅市集、互動展區、觀眾引流",
+"d3.ct":"招商合作通道","d3.row1l":"招商熱線","d3.row2l":"商務郵箱","d3.row3l":"對接方式","d3.row3v":"企業微信 / 公眾號 / 電話","d3.btn":"添加企業微信洽談","d3.btn2":"電話諮詢"
 },
 "en":{
 "meta.title":"Hengqin Yicheng Gewu｜Dragon Boat Booking｜Corporate Team Building｜Water Race Services",
@@ -560,7 +616,16 @@ const I18N={
 "ftr.ch":"Contact","ftr.c1":"Phone: +86 13168677659","ftr.c2":"Email: hqycgw@y163.com","ftr.c3":"Address: 3000 Huandao East Road, Hengqin G-M In-Depth Cooperation Zone<br/>International Business Center, 8F, Rm 8042",
 "ftr.copy":"© 2026 Hengqin Yicheng Gewu Sports & Culture Development Co., Ltd. All rights reserved.","ftr.top":"Back to top ↑",
 "mo.t":"Add our WeChat to confirm your booking","mo.p":"Long-press or screenshot the QR code to connect with a consultant about timing and programme.","mo.copy":"Copy booking info","mo.close":"Close",
-"js.name":"Please enter your name","js.phone":"Please enter a valid mainland China 11-digit or Macau 8-digit mobile number","js.date":"Booking date cannot be earlier than today","js.type":"Please select a booking type","js.people":"Party size must be between 1 and 200","js.submitting":"Submitting…","js.submit":"Submit Booking","js.ok":"Booking submitted — our consultant will contact you soon","js.fail":"Email failed — WeChat booking opened","js.copyok":"✓ Booking info copied — paste it in WeChat","js.sumt":"Booking Details","js.sumname":"Name","js.sumphone":"Mobile","js.sumtype":"Type","js.sumdate":"Date","js.sumpeople":"Party size","js.sumwechat":"WeChat","js.sumremark":"Notes","js.sumfail":"Email sending failed — please complete the booking via WeChat"
+"js.name":"Please enter your name","js.phone":"Please enter a valid mainland China 11-digit or Macau 8-digit mobile number","js.date":"Booking date cannot be earlier than today","js.type":"Please select a booking type","js.people":"Party size must be between 1 and 200","js.submitting":"Submitting…","js.submit":"Submit Booking","js.ok":"Booking submitted — our consultant will contact you soon","js.fail":"Email failed — WeChat booking opened","js.copyok":"✓ Booking info copied — paste it in WeChat","js.sumt":"Booking Details","js.sumname":"Name","js.sumphone":"Mobile","js.sumtype":"Type","js.sumdate":"Date","js.sumpeople":"Party size","js.sumwechat":"WeChat","js.sumremark":"Notes","js.sumfail":"Email sending failed — please complete the booking via WeChat",
+"nav.sponsor":"Sponsorship","hero.cta3":"3rd Dragon Raises Head · Sponsorship",
+"d3.title":"3rd Hengqin 'Dragon Raises Head' Little Dragon Invitational — Sponsorship Open","d3.sub":"An established series with two successful editions — the 3rd edition is now in preparation and open for sponsorship",
+"d3.h":"The Hengqin-Macau culture & tourism hotspot","d3.h2":" · flagship water-sports IP",
+"d3.p":"The Hengqin 'Dragon Raises Head' Little Dragon Invitational is a self-hosted sporting event brand in the Guangdong-Macao In-Depth Cooperation Zone. The first two editions were held successfully with government approval and media coverage, bringing together teams from Hengqin and Macau. The 3rd edition is now open for partnership — title sponsorship, co-hosting and on-site cooperation are all welcome.",
+"d3.f1t":"Title Sponsorship","d3.f1d":"Event naming rights, key-visual exposure and media reach",
+"d3.f2t":"Co-hosting","d3.f2d":"Deep brand integration, sharing the event IP influence",
+"d3.f3t":"Official Supplier / Service","d3.f3d":"On-site experience integration and booth partnership",
+"d3.f4t":"On-site Booths","d3.f4d":"Culture & tourism market, interactive zones and audience traffic",
+"d3.ct":"Sponsorship Contact","d3.row1l":"Sponsorship hotline","d3.row2l":"Business email","d3.row3l":"How to connect","d3.row3v":"WeChat / Official Account / Phone","d3.btn":"Add WeChat to discuss","d3.btn2":"Call us"
 },
 "pt":{
 "meta.title":"Hengqin Yicheng Gewu｜Reserva de Barcos-Dragão｜Team Building Empresarial｜Serviços de Provas Aquáticas",
@@ -613,7 +678,16 @@ const I18N={
 "ftr.ch":"Contactos","ftr.c1":"Telefone: +86 13168677659","ftr.c2":"Email: hqycgw@y163.com","ftr.c3":"Morada: 3000 Huandao East Road, Hengqin<br/>International Business Center, 8.º andar, Sala 8042",
 "ftr.copy":"© 2026 Hengqin Yicheng Gewu — Desportos e Cultura, Lda. Todos os direitos reservados.","ftr.top":"Voltar ao topo ↑",
 "mo.t":"Adicione o nosso WeChat para confirmar a reserva","mo.p":"Mantenha premido ou faça captura do código QR para falar com um consultor sobre horários e programas.","mo.copy":"Copiar dados da reserva","mo.close":"Fechar",
-"js.name":"Por favor, introduza o seu nome","js.phone":"Introduza um telemóvel válido da China continental (11 dígitos) ou de Macau (8 dígitos)","js.date":"A data da reserva não pode ser anterior a hoje","js.type":"Por favor, selecione o tipo de reserva","js.people":"O número de participantes deve estar entre 1 e 200","js.submitting":"A enviar…","js.submit":"Enviar Reserva","js.ok":"Reserva enviada — o consultor entrará em contacto em breve","js.fail":"Falha no email — abrimos a reserva via WeChat","js.copyok":"✓ Dados copiados — cole no WeChat","js.sumt":"Detalhes da Reserva","js.sumname":"Nome","js.sumphone":"Telemóvel","js.sumtype":"Tipo","js.sumdate":"Data","js.sumpeople":"Participantes","js.sumwechat":"WeChat","js.sumremark":"Observações","js.sumfail":"Falha no envio do email — conclua a reserva via WeChat"
+"js.name":"Por favor, introduza o seu nome","js.phone":"Introduza um telemóvel válido da China continental (11 dígitos) ou de Macau (8 dígitos)","js.date":"A data da reserva não pode ser anterior a hoje","js.type":"Por favor, selecione o tipo de reserva","js.people":"O número de participantes deve estar entre 1 e 200","js.submitting":"A enviar…","js.submit":"Enviar Reserva","js.ok":"Reserva enviada — o consultor entrará em contacto em breve","js.fail":"Falha no email — abrimos a reserva via WeChat","js.copyok":"✓ Dados copiados — cole no WeChat","js.sumt":"Detalhes da Reserva","js.sumname":"Nome","js.sumphone":"Telemóvel","js.sumtype":"Tipo","js.sumdate":"Data","js.sumpeople":"Participantes","js.sumwechat":"WeChat","js.sumremark":"Observações","js.sumfail":"Falha no envio do email — conclua a reserva via WeChat",
+"nav.sponsor":"Patrocínio","hero.cta3":"3.º 'O Dragão Levanta a Cabeça' · Patrocínio",
+"d3.title":"3.º Convite 'O Dragão Levanta a Cabeça' de Hengqin — Patrocínios Abertos","d3.sub":"Uma série consolidada com duas edições de sucesso — a 3.ª edição está agora em preparação e aberta a patrocínios",
+"d3.h":"O polo turístico-cultural de Hengqin-Macau","d3.h2":" · o IP de desporto aquático",
+"d3.p":"O Convite 'O Dragão Levanta a Cabeça' é um evento desportivo próprio da Zona de Cooperação Aprofundada Guangdong-Macau. As duas primeiras edições foram realizadas com sucesso, com aprovação governamental e cobertura mediática, reunindo equipas de Hengqin e Macau. A 3.ª edição está agora aberta a patrocínios: patrocínio principal, co-organização e parcerias no local.",
+"d3.f1t":"Patrocínio Principal","d3.f1d":"Direitos de nomeação do evento, exposição da imagem principal e cobertura mediática",
+"d3.f2t":"Co-organização","d3.f2d":"Integração profunda da marca, partilhando a influência do evento",
+"d3.f3t":"Fornecedor / Serviço Oficial","d3.f3d":"Experiências no local e parceria de estande",
+"d3.f4t":"Estandes no Local","d3.f4d":"Mercado cultural e turístico, zonas interativas e tráfego de público",
+"d3.ct":"Canal de Patrocínio","d3.row1l":"Linha de patrocínio","d3.row2l":"Email comercial","d3.row3l":"Como contactar","d3.row3v":"WeChat / Conta Oficial / Telefone","d3.btn":"Adicionar WeChat para negociar","d3.btn2":"Ligar-nos"
 },
 "es":{
 "meta.title":"Hengqin Yicheng Gewu｜Reserva de Botes de Dragón｜Team Building Empresarial｜Servicios de Regatas",
@@ -666,7 +740,16 @@ const I18N={
 "ftr.ch":"Contacto","ftr.c1":"Teléfono: +86 13168677659","ftr.c2":"Email: hqycgw@y163.com","ftr.c3":"Dirección: 3000 Huandao East Road, Hengqin<br/>International Business Center, 8.ª planta, Oficina 8042",
 "ftr.copy":"© 2026 Hengqin Yicheng Gewu Deportes y Cultura, S.L. Todos los derechos reservados.","ftr.top":"Volver arriba ↑",
 "mo.t":"Añada nuestro WeChat para confirmar su reserva","mo.p":"Mantenga pulsado o haga captura del código QR para hablar con un consultor sobre horarios y programas.","mo.copy":"Copiar datos de reserva","mo.close":"Cerrar",
-"js.name":"Por favor, introduzca su nombre","js.phone":"Introduzca un móvil válido de China continental (11 dígitos) o de Macao (8 dígitos)","js.date":"La fecha de reserva no puede ser anterior a hoy","js.type":"Por favor, seleccione el tipo de reserva","js.people":"El número de participantes debe estar entre 1 y 200","js.submitting":"Enviando…","js.submit":"Enviar Reserva","js.ok":"Reserva enviada: un consultor se pondrá en contacto pronto","js.fail":"Error de email: se abrió la reserva por WeChat","js.copyok":"✓ Datos copiados: péguelos en WeChat","js.sumt":"Detalles de la Reserva","js.sumname":"Nombre","js.sumphone":"Móvil","js.sumtype":"Tipo","js.sumdate":"Fecha","js.sumpeople":"Participantes","js.sumwechat":"WeChat","js.sumremark":"Notas","js.sumfail":"Error al enviar el email: complete la reserva por WeChat"
+"js.name":"Por favor, introduzca su nombre","js.phone":"Introduzca un móvil válido de China continental (11 dígitos) o de Macao (8 dígitos)","js.date":"La fecha de reserva no puede ser anterior a hoy","js.type":"Por favor, seleccione el tipo de reserva","js.people":"El número de participantes debe estar entre 1 y 200","js.submitting":"Enviando…","js.submit":"Enviar Reserva","js.ok":"Reserva enviada: un consultor se pondrá en contacto pronto","js.fail":"Error de email: se abrió la reserva por WeChat","js.copyok":"✓ Datos copiados: péguelos en WeChat","js.sumt":"Detalles de la Reserva","js.sumname":"Nombre","js.sumphone":"Móvil","js.sumtype":"Tipo","js.sumdate":"Fecha","js.sumpeople":"Participantes","js.sumwechat":"WeChat","js.sumremark":"Notas","js.sumfail":"Error al enviar el email: complete la reserva por WeChat",
+"nav.sponsor":"Patrocinio","hero.cta3":"3.º 'El Dragón Levanta la Cabeza' · Patrocinio",
+"d3.title":"3.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin — Patrocinio abierto","d3.sub":"Una serie consolidada con dos ediciones exitosas: la 3.ª edición ya está en preparación y abierta a patrocinio",
+"d3.h":"El polo turístico-cultural de Hengqin-Macao","d3.h2":" · el IP de deporte acuático",
+"d3.p":"La Invitación 'El Dragón Levanta la Cabeza' es un evento deportivo propio de la Zona de Cooperación Profunda Guangdong-Macao. Las dos primeras ediciones se celebraron con éxito, con aprobación gubernamental y cobertura mediática, reuniendo equipos de Hengqin y Macao. La 3.ª edición está ahora abierta a patrocinio: patrocinio principal, coorganización y colaboraciones en el lugar.",
+"d3.f1t":"Patrocinio Principal","d3.f1d":"Derechos de nombre del evento, exposición de la imagen principal y cobertura mediática",
+"d3.f2t":"Coorganización","d3.f2d":"Integración profunda de marca, compartiendo la influencia del evento",
+"d3.f3t":"Proveedor / Servicio Oficial","d3.f3d":"Experiencias en el lugar y colaboración de estand",
+"d3.f4t":"Estands en el Lugar","d3.f4d":"Mercado cultural y turístico, zonas interactivas y tráfico de público",
+"d3.ct":"Canal de Patrocinio","d3.row1l":"Línea de patrocinio","d3.row2l":"Email comercial","d3.row3l":"Cómo contactar","d3.row3v":"WeChat / Cuenta Oficial / Teléfono","d3.btn":"Añadir WeChat para negociar","d3.btn2":"Llámenos"
 }
 };
 const LANG_KEY="hqycgw-lang";
@@ -714,6 +797,7 @@ const on=()=>{modal.classList.add("on");modal.setAttribute("aria-hidden","false"
 const off=()=>{modal.classList.remove("on");modal.setAttribute("aria-hidden","true");document.body.style.overflow=""};
 const openWechat=()=>{mc.classList.remove("booking");copyBtn.style.display="none";sum.textContent="";on()};
 openBtn.addEventListener("click",openWechat);
+$$(".wc-btn").forEach(b=>b.addEventListener("click",openWechat));
 closeBtn.addEventListener("click",off);
 modal.addEventListener("click",e=>{if(e.target===modal)off()});
 let gi=0;const gl=$$(".g-item");
