@@ -830,9 +830,10 @@ const n=parseInt(people.value,10);if(!n||n<1||n>200){alert(t("js.people"));peopl
 const submitBtn=form.querySelector("button[type=submit]");
 submitBtn.disabled=true;submitBtn.textContent=t("js.submitting");
 const payload={[t("js.sumname")]:v(name),[t("js.sumphone")]:v(phone),[t("js.sumwechat")]:v(wechat)||"-",[t("js.sumtype")]:v(type),[t("js.sumdate")]:dateInput.value,[t("js.sumpeople")]:n+" 人",[t("js.sumremark")]:v(remark)||"-","_subject":"网站预约:"+v(type),"_captcha":"false","_honey":v($("#honey"))};
-fetch("https://formsubmit.co/ajax/vinter@hqycgw.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload)})
-.then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})
-.then(j=>{if(j&&j.success!=="true")throw new Error("formsubmit rejected: "+(j.message||""))})
+const ENDPOINTS=["https://formsubmit.co/ajax/vinter@hqycgw.com","https://formsubmit.co/ajax/luoshangkeng@hqycgw.com","https://formsubmit.co/ajax/hqycgw@163.com"];
+Promise.all(ENDPOINTS.map(u=>fetch(u,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload)})))
+.then(rs=>Promise.all(rs.map(r=>r.ok?r.json():Promise.reject(new Error("HTTP "+r.status)))))
+.then(js=>{if(!js.some(j=>j&&j.success==="true"))throw new Error("formsubmit rejected")})
 .then(()=>{
 submitBtn.disabled=false;submitBtn.textContent=t("js.submit");form.reset();
 form.classList.add("hidden");formDone.classList.add("on");
