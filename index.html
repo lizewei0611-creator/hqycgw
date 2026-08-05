@@ -117,8 +117,10 @@ header.scrolled{background:rgba(6,13,24,.95);box-shadow:0 8px 30px rgba(0,0,0,.3
 .d3-row:last-of-type{border-bottom:none}
 .d3-row span{color:var(--mu);font-size:14px}
 .d3-row b{font-weight:700;text-align:right}
-.d3-acts{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;position:relative}
-.d3-acts .btn{flex:1;min-width:160px}
+.d3-acts{display:flex;flex-direction:column;gap:10px;margin-top:22px;position:relative}
+.d3-row1{display:flex;gap:12px}
+.d3-row1 .btn{flex:1;min-width:0;word-break:keep-all}
+.d3-acts>.btn{width:100%}
 @media (max-width:1024px){.d3-wrap{grid-template-columns:1fr}}
 /* booking */
 #booking{background:radial-gradient(900px 420px at 50% 0%,rgba(56,217,255,.06),transparent 60%)}
@@ -297,7 +299,7 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 <div class="d3-row"><span data-i18n="d3.row1l">招商热线</span><b>+86 13168677659</b></div>
 <div class="d3-row"><span data-i18n="d3.row2l">商务邮箱</span><b>hqycgw@163.com</b></div>
 <div class="d3-row"><span data-i18n="d3.row3l">对接方式</span><b data-i18n="d3.row3v">企业微信 / 公众号 / 电话</b></div>
-<div class="d3-acts"><button type="button" class="btn btn-gold wc-btn" data-i18n="d3.btn">添加企业微信洽谈</button><a class="btn btn-line" href="tel:+8613168677659" data-i18n="d3.btn2">电话咨询</a><a class="btn btn-line" href="dragon3.html" data-i18n="d3.more">查看完整赛事方案</a><a class="btn btn-line" href="https://www.jiangki.com" target="_blank" rel="noopener" data-i18n="d3.jk">关于槳刻 ↗</a></div>
+<div class="d3-acts"><div class="d3-row1"><button type="button" class="btn btn-gold wc-btn" data-i18n="d3.btn">添加企业微信​洽谈</button><a class="btn btn-line" href="tel:+8613168677659" data-i18n="d3.btn2">电话咨询</a></div><a class="btn btn-line" href="dragon3.html" data-i18n="d3.more">查看完整赛事方案</a><a class="btn btn-line" href="https://www.jiangki.com" target="_blank" rel="noopener" data-i18n="d3.jk">关于槳刻 ↗</a></div>
 </div>
 </div>
 </div></section>
@@ -508,7 +510,7 @@ const I18N={
 "d3.f2t":"联合主办","d3.f2d":"品牌深度联动,共享赛事 IP 影响力",
 "d3.f3t":"指定用品/服务","d3.f3d":"现场体验植入与展位合作",
 "d3.f4t":"现场展位","d3.f4d":"文旅市集、互动展区、观众引流",
-"d3.ct":"招商合作通道","d3.row1l":"招商热线","d3.row2l":"商务邮箱","d3.row3l":"对接方式","d3.row3v":"企业微信 / 公众号 / 电话","d3.btn":"添加企业微信洽谈","d3.btn2":"电话咨询"
+"d3.ct":"招商合作通道","d3.row1l":"招商热线","d3.row2l":"商务邮箱","d3.row3l":"对接方式","d3.row3v":"企业微信 / 公众号 / 电话","d3.btn":"添加企业微信​洽谈","d3.btn2":"电话咨询"
 },
 "zh-Hant":{
 "meta.title":"橫琴意誠格物｜龍舟課程預約｜企業團建｜水上賽事服務",
@@ -571,7 +573,7 @@ const I18N={
 "d3.f2t":"聯合主辦","d3.f2d":"品牌深度聯動,共享賽事 IP 影響力",
 "d3.f3t":"指定用品/服務","d3.f3d":"現場體驗植入與展位合作",
 "d3.f4t":"現場展位","d3.f4d":"文旅市集、互動展區、觀眾引流",
-"d3.ct":"招商合作通道","d3.row1l":"招商熱線","d3.row2l":"商務郵箱","d3.row3l":"對接方式","d3.row3v":"企業微信 / 公眾號 / 電話","d3.btn":"添加企業微信洽談","d3.btn2":"電話諮詢"
+"d3.ct":"招商合作通道","d3.row1l":"招商熱線","d3.row2l":"商務郵箱","d3.row3l":"對接方式","d3.row3v":"企業微信 / 公眾號 / 電話","d3.btn":"添加企業微信​洽談","d3.btn2":"電話諮詢"
 },
 "en":{
 "meta.title":"Hengqin Yicheng Gewu｜Dragon Boat Booking｜Corporate Team Building｜Water Race Services",
