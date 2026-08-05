@@ -48,6 +48,8 @@ header.scrolled{background:rgba(6,13,24,.95);box-shadow:0 8px 30px rgba(0,0,0,.3
 .links a:after{content:"";position:absolute;left:50%;bottom:0;width:0;height:2px;border-radius:2px;background:var(--grad);transition:.25s;transform:translateX(-50%)}
 .links a:hover,.links a.active{color:var(--gold2)}
 .links a:hover:after,.links a.active:after{width:100%}
+.lang-sel{background:rgba(255,255,255,.05);border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:7px 10px;font-size:13px;outline:none;cursor:pointer;font-family:inherit}
+.lang-sel option{background:#0a1c30;color:var(--tx)}
 .nav-cta{margin-left:6px}
 /* hero */
 @keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.14)}}
@@ -124,7 +126,6 @@ select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(
 select option{background:#0a1c30;color:var(--tx)}
 input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.7)}
 .fmt{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:20px;flex-wrap:wrap}
-.form-ok{color:var(--gn);font-size:13px;display:none}
 /* team */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .mem{display:flex;align-items:center;gap:18px;padding:24px}
@@ -228,13 +229,13 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 .rv.on{opacity:1;transform:none}
 /* responsive */
 @media (max-width:1024px){.g3,.g4,.g4q{grid-template-columns:repeat(2,1fr)}.ct{grid-template-columns:1fr}.res-wrap,.bk-wrap{grid-template-columns:1fr}.hero-stats{grid-template-columns:repeat(2,1fr)}.hs:nth-child(3):before{display:none}.ft{grid-template-columns:1fr 1fr}}
-@media (max-width:760px){section{padding:62px 0}.menu-btn{display:block;margin-left:auto}.links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;padding:12px 0 8px}.links.open{display:flex}.links a{padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.05)}.links a:after{display:none}.nav{flex-wrap:wrap}.nav-cta{display:none}.hero{padding:84px 0 54px}.hero-veil{background:linear-gradient(180deg,rgba(5,11,20,.8),rgba(5,11,20,.6) 45%,rgba(5,11,20,.94))}.hero-stats{margin-top:40px;padding:18px 6px}}
+@media (max-width:760px){section{padding:62px 0}.menu-btn{display:block;margin-left:auto}.links{display:none;width:100%;flex-direction:column;align-items:stretch;gap:4px;padding:12px 0 8px}.links.open{display:flex}.links a{padding:11px 6px;border-bottom:1px solid rgba(255,255,255,.05)}.links a:after{display:none}.nav{flex-wrap:wrap}.nav-cta{display:none}.lang-sel{margin-left:auto;margin-top:2px}.hero{padding:84px 0 54px}.hero-veil{background:linear-gradient(180deg,rgba(5,11,20,.8),rgba(5,11,20,.6) 45%,rgba(5,11,20,.94))}.hero-stats{margin-top:40px;padding:18px 6px}}
 @media (max-width:560px){.g3,.g4,.g4q{grid-template-columns:1fr}.fg{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.ft{grid-template-columns:1fr}.btn{width:100%}.hero-acts{flex-direction:column}.trust{gap:12px 20px}.mem{flex-direction:column;text-align:center}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<header id="hdr"><div class="c nav"><div class="brand"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b>横琴意诚格物文体发展有限公司</b><span>HENGQIN YICHENG GEWU</span></div></div><button class="menu-btn" id="menuBtn" type="button" aria-label="切换导航菜单" aria-expanded="false">☰</button><nav class="links" id="navLinks" aria-label="主导航"><a href="#home">首页</a><a href="#services">核心业务</a><a href="#gallery">赛事风采</a><a href="#game">互动体验</a><a href="#booking">课程预约</a><a href="#contact">联系我们</a></nav><a class="btn btn-gold btn-sm nav-cta" href="#booking">立即预约</a></div></header>
+<header id="hdr"><div class="c nav"><div class="brand"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b data-i18n="brand.b">横琴意诚格物文体发展有限公司</b><span>HENGQIN YICHENG GEWU</span></div></div><button class="menu-btn" id="menuBtn" type="button" aria-label="切换导航菜单" aria-expanded="false">☰</button><nav class="links" id="navLinks" aria-label="主导航"><a href="#home" data-i18n="nav.home">首页</a><a href="#services" data-i18n="nav.services">核心业务</a><a href="#gallery" data-i18n="nav.gallery">赛事风采</a><a href="#game" data-i18n="nav.game">互动体验</a><a href="#booking" data-i18n="nav.booking">课程预约</a><a href="#contact" data-i18n="nav.contact">联系我们</a></nav><select class="lang-sel" id="langSel" aria-label="Language"><option value="zh-CN">简体中文</option><option value="zh-Hant">繁體中文</option><option value="en">English</option><option value="pt">Português</option><option value="es">Español</option></select><a class="btn btn-gold btn-sm nav-cta" href="#booking" data-i18n="nav.cta">立即预约</a></div></header>
 
 <main>
 <section class="hero" id="home">
@@ -243,155 +244,155 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 <div class="c hero-in">
 <div class="hero-txt">
 <div class="kicker">HENGQIN · TIANMU QINTAI</div>
-<h1>横琴天沐琴台<br/>龙舟预约</h1>
-<p class="lead">龙舟课程 · 企业团建 · 青少年培训 · 赛事承办。依托天沐琴台水域场景与专业教练团队,为企业与个人提供安全、专业、沉浸式的水上龙舟体验。</p>
-<div class="hero-acts"><a class="btn btn-gold" href="#booking">立即预约</a><button class="btn btn-line" id="open" type="button">添加企业微信</button></div>
-<ul class="trust"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>专业教练团队</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>安全保障体系</li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>横琴天沐琴台场景</li></ul>
+<h1><span data-i18n="hero.t1">横琴天沐琴台</span><br/><span data-i18n="hero.t2">龙舟预约</span></h1>
+<p class="lead" data-i18n="hero.lead">龙舟课程 · 企业团建 · 青少年培训 · 赛事承办。依托天沐琴台水域场景与专业教练团队,为企业与个人提供安全、专业、沉浸式的水上龙舟体验。</p>
+<div class="hero-acts"><a class="btn btn-gold" href="#booking" data-i18n="nav.cta">立即预约</a><button class="btn btn-line" id="open" type="button" data-i18n="hero.cta2">添加企业微信</button></div>
+<ul class="trust"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.tr1">专业教练团队</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.tr2">安全保障体系</span></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2dd39a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="hero.tr3">横琴天沐琴台场景</span></li></ul>
 </div>
 <div class="hero-stats">
-<div class="hs"><b><span class="num" data-n="2">0</span> 艘</b><span>标准大龙舟</span></div>
-<div class="hs"><b><span class="num" data-n="4">0</span> 大</b><span>核心业务板块</span></div>
-<div class="hs"><b><span class="num" data-n="1">0</span> 站式</b><span>定制活动服务</span></div>
-<div class="hs"><b><span class="num" data-n="100">0</span>%</b><span>安全护航体系</span></div>
+<div class="hs"><b><span class="num" data-n="2">0</span> <span data-i18n="st.u1">艘</span></b><span data-i18n="st.l1">标准大龙舟</span></div>
+<div class="hs"><b><span class="num" data-n="4">0</span> <span data-i18n="st.u2">大</span></b><span data-i18n="st.l2">核心业务板块</span></div>
+<div class="hs"><b><span class="num" data-n="1">0</span> <span data-i18n="st.u3">站式</span></b><span data-i18n="st.l3">定制活动服务</span></div>
+<div class="hs"><b><span class="num" data-n="100">0</span><span data-i18n="st.u4">%</span></b><span data-i18n="st.l4">安全护航体系</span></div>
 </div>
 </div>
 </section>
 
 <section id="services"><div class="c">
-<div class="tt rv"><span class="kicker">OUR SERVICES</span><h2>核心业务</h2><p>四大模块覆盖课程体验、企业活动与专业赛事服务</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">OUR SERVICES</span><h2 data-i18n="sv.title">核心业务</h2><p data-i18n="sv.sub">四大模块覆盖课程体验、企业活动与专业赛事服务</p><div class="line"></div></div>
 <div class="g4">
-<article class="card svc rv" style="--d:.05s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c1.8 1.6 4.2 1.6 6 0s4.2-1.6 6 0 4.2 1.6 6 0"/><path d="M2 12c1.8 1.6 4.2 1.6 6 0s4.2-1.6 6 0 4.2 1.6 6 0"/><path d="M6 8h6"/><circle cx="18" cy="8" r="2"/></svg></div><h3>龙舟体验课</h3><p>面向个人及小团体,提供入门指导、上船实操与基础配合训练,零基础即可安全上手。</p><span class="tag">适合新手</span></article>
-<article class="card svc rv" style="--d:.12s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>企业团建</h3><p>为企业定制龙舟团建方案,含组织协作训练、趣味竞速与活动复盘,打造高凝聚力团队。</p><span class="tag">企业定制</span></article>
-<article class="card svc rv" style="--d:.19s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></svg></div><h3>青少年龙舟课程</h3><p>围绕体能、纪律、协作与传统文化认知,构建阶段性青训课程,培养水上运动兴趣。</p><span class="tag">青训体系</span></article>
-<article class="card svc rv" style="--d:.26s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v10a5 5 0 0 1-10 0V4Z"/><path d="M7 8h10"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3>龙舟赛事承办</h3><p>提供赛事策划、执行、裁判协调、安全与现场运营一体化服务,保障赛事专业落地。</p><span class="tag">一体化运营</span></article>
+<article class="card svc rv" style="--d:.05s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c1.8 1.6 4.2 1.6 6 0s4.2-1.6 6 0 4.2 1.6 6 0"/><path d="M2 12c1.8 1.6 4.2 1.6 6 0s4.2-1.6 6 0 4.2 1.6 6 0"/><path d="M6 8h6"/><circle cx="18" cy="8" r="2"/></svg></div><h3 data-i18n="sv.t1">龙舟体验课</h3><p data-i18n="sv.d1">面向个人及小团体,提供入门指导、上船实操与基础配合训练,零基础即可安全上手。</p><span class="tag" data-i18n="sv.tag1">适合新手</span></article>
+<article class="card svc rv" style="--d:.12s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 data-i18n="sv.t2">企业团建</h3><p data-i18n="sv.d2">为企业定制龙舟团建方案,含组织协作训练、趣味竞速与活动复盘,打造高凝聚力团队。</p><span class="tag" data-i18n="sv.tag2">企业定制</span></article>
+<article class="card svc rv" style="--d:.19s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><path d="M22 10v6"/></svg></div><h3 data-i18n="sv.t3">青少年龙舟课程</h3><p data-i18n="sv.d3">围绕体能、纪律、协作与传统文化认知,构建阶段性青训课程,培养水上运动兴趣。</p><span class="tag" data-i18n="sv.tag3">青训体系</span></article>
+<article class="card svc rv" style="--d:.26s"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v10a5 5 0 0 1-10 0V4Z"/><path d="M7 8h10"/><circle cx="12" cy="12" r="1.6"/></svg></div><h3 data-i18n="sv.t4">龙舟赛事承办</h3><p data-i18n="sv.d4">提供赛事策划、执行、裁判协调、安全与现场运营一体化服务,保障赛事专业落地。</p><span class="tag" data-i18n="sv.tag4">一体化运营</span></article>
 </div>
 </div></section>
 
 <section id="gallery"><div class="c">
-<div class="tt rv"><span class="kicker">GALLERY</span><h2>赛事风采</h2><p>横琴「龙抬头」小龙邀请赛系列赛事现场直击——我们主办,我们见证</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">GALLERY</span><h2 data-i18n="ga.title">赛事风采</h2><p data-i18n="ga.sub">横琴「龙抬头」小龙邀请赛系列赛事现场直击——我们主办,我们见证</p><div class="line"></div></div>
 <div class="g3">
-<button class="g-item rv" type="button" data-img="image/event-1.jpg" data-cap="2026 横琴第二届「龙抬头」小龙邀请赛" aria-label="查看大图:2026 横琴第二届龙抬头小龙邀请赛"><img loading="lazy" src="image/event-1.jpg" alt="2026横琴第二届龙抬头小龙邀请赛现场" /><span class="g-cap">2026 横琴第二届「龙抬头」小龙邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
-<button class="g-item rv" style="--d:.07s" type="button" data-img="image/event-2.jpg" data-cap="2026 横琴第二届「龙抬头」小龙邀请赛" aria-label="查看大图:2026 横琴第二届龙抬头小龙邀请赛"><img loading="lazy" src="image/event-2.jpg" alt="2026横琴第二届龙抬头小龙邀请赛现场" /><span class="g-cap">2026 横琴第二届「龙抬头」小龙邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
-<button class="g-item rv" style="--d:.14s" type="button" data-img="image/event-3.jpg" data-cap="2026 横琴第二届「龙抬头」小龙邀请赛" aria-label="查看大图:2026 横琴第二届龙抬头小龙邀请赛"><img loading="lazy" src="image/event-3.jpg" alt="2026横琴第二届龙抬头小龙邀请赛现场" /><span class="g-cap">2026 横琴第二届「龙抬头」小龙邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
-<button class="g-item rv" style="--d:.21s" type="button" data-img="image/event-4.jpg" data-cap="2025 横琴第一届「龙抬头」小龙环绕邀请赛" aria-label="查看大图:2025 横琴第一届龙抬头小龙环绕邀请赛"><img loading="lazy" src="image/event-4.jpg" alt="2025横琴第一届龙抬头小龙环绕邀请赛现场" /><span class="g-cap">2025 横琴第一届「龙抬头」小龙环绕邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
-<button class="g-item rv" style="--d:.07s" type="button" data-img="image/event-5.jpg" data-cap="2025 横琴第一届「龙抬头」小龙环绕邀请赛" aria-label="查看大图:2025 横琴第一届龙抬头小龙环绕邀请赛"><img loading="lazy" src="image/event-5.jpg" alt="2025横琴第一届龙抬头小龙环绕邀请赛现场" /><span class="g-cap">2025 横琴第一届「龙抬头」小龙环绕邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
-<button class="g-item rv" style="--d:.14s" type="button" data-img="image/event-6.jpg" data-cap="2025 横琴第一届「龙抬头」小龙环绕邀请赛" aria-label="查看大图:2025 横琴第一届龙抬头小龙环绕邀请赛"><img loading="lazy" src="image/event-6.jpg" alt="2025横琴第一届龙抬头小龙环绕邀请赛现场" /><span class="g-cap">2025 横琴第一届「龙抬头」小龙环绕邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+<button class="g-item rv" type="button" data-cap-key="ga.c1" data-i18n-aria="ga.c1" aria-label="查看大图"><img loading="lazy" src="image/event-1.jpg" alt="" data-i18n-alt="ga.c1" /><span class="g-cap" data-i18n="ga.c1">2026 横琴第二届「龙抬头」小龙邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+<button class="g-item rv" style="--d:.07s" type="button" data-cap-key="ga.c2" data-i18n-aria="ga.c2" aria-label="查看大图"><img loading="lazy" src="image/event-2.jpg" alt="" data-i18n-alt="ga.c2" /><span class="g-cap" data-i18n="ga.c2">2026 横琴第二届「龙抬头」小龙邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+<button class="g-item rv" style="--d:.14s" type="button" data-cap-key="ga.c3" data-i18n-aria="ga.c3" aria-label="查看大图"><img loading="lazy" src="image/event-3.jpg" alt="" data-i18n-alt="ga.c3" /><span class="g-cap" data-i18n="ga.c3">2026 横琴第二届「龙抬头」小龙邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+<button class="g-item rv" style="--d:.21s" type="button" data-cap-key="ga.c4" data-i18n-aria="ga.c4" aria-label="查看大图"><img loading="lazy" src="image/event-4.jpg" alt="" data-i18n-alt="ga.c4" /><span class="g-cap" data-i18n="ga.c4">2025 横琴第一届「龙抬头」小龙环绕邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+<button class="g-item rv" style="--d:.07s" type="button" data-cap-key="ga.c5" data-i18n-aria="ga.c5" aria-label="查看大图"><img loading="lazy" src="image/event-5.jpg" alt="" data-i18n-alt="ga.c5" /><span class="g-cap" data-i18n="ga.c5">2025 横琴第一届「龙抬头」小龙环绕邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
+<button class="g-item rv" style="--d:.14s" type="button" data-cap-key="ga.c6" data-i18n-aria="ga.c6" aria-label="查看大图"><img loading="lazy" src="image/event-6.jpg" alt="" data-i18n-alt="ga.c6" /><span class="g-cap" data-i18n="ga.c6">2025 横琴第一届「龙抬头」小龙环绕邀请赛</span><span class="g-zoom"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span></button>
 </div>
 </div></section>
 
 <section id="game"><div class="c">
-<div class="tt rv"><span class="kicker">INTERACTIVE</span><h2>互动体验 · 试试划龙舟</h2><p>连按空格键或点击屏幕划桨,和 AI 赛一场,提前感受竞渡节奏</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">INTERACTIVE</span><h2 data-i18n="gm.title">互动体验 · 试试划龙舟</h2><p data-i18n="gm.sub">连按空格键或点击屏幕划桨,和 AI 赛一场,提前感受竞渡节奏</p><div class="line"></div></div>
 <div class="game-card rv">
-<canvas id="gameCanvas" aria-label="划龙舟小游戏:连按空格键或点击屏幕为龙舟加速,与 AI 竞速"></canvas>
+<canvas id="gameCanvas" aria-label="划龙舟小游戏"></canvas>
 <div class="game-bar">
-<div class="g-p g-you"><b>你的龙舟</b><span class="g-bar"><i></i></span></div>
-<div class="g-p g-ai"><b>AI 龙舟</b><span class="g-bar"><i></i></span></div>
-<button class="btn btn-gold btn-sm" id="gameRestart" type="button">再来一局</button>
+<div class="g-p g-you"><b data-i18n="gm.you">你的龙舟</b><span class="g-bar"><i></i></span></div>
+<div class="g-p g-ai"><b data-i18n="gm.ai">AI 龙舟</b><span class="g-bar"><i></i></span></div>
+<button class="btn btn-gold btn-sm" id="gameRestart" type="button" data-i18n="gm.restart">再来一局</button>
 </div>
-<p class="game-tip" id="gameTip">快速点击或连按 <kbd>空格</kbd> 划桨,划得越快船越快!</p>
+<p class="game-tip" id="gameTip"><span data-i18n="gm.tip">快速点击或连按</span> <kbd data-i18n="gm.key">空格</kbd> <span data-i18n="gm.tip2">划桨,划得越快船越快!</span></p>
 </div>
 </div></section>
 
 <section id="resources"><div class="c res-wrap">
 <div class="res-text rv">
 <span class="kicker">BASE &amp; RESOURCES</span>
-<h3>依托横琴水域场景,<em>构建完整水上保障能力</em></h3>
-<p>基地位于横琴粤澳深度合作区天沐琴台水域,配套标准龙舟、专业教练团队与完善安全体系,为课程体验与赛事活动提供一站式支持。</p>
+<h3><span data-i18n="re.h3a">依托横琴水域场景,</span><em data-i18n="re.h3b">构建完整水上保障能力</em></h3>
+<p data-i18n="re.p">基地位于横琴粤澳深度合作区天沐琴台水域,配套标准龙舟、专业教练团队与完善安全体系,为课程体验与赛事活动提供一站式支持。</p>
 <ul class="feat">
-<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>横琴天沐琴台水上运动场景</b><span>环境开阔、水质优良的天然水上训练场</span></div></li>
-<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>两艘标准大龙舟</b><span>满足 20 人以上团队同场竞技与训练</span></div></li>
-<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>专业教练团队</b><span>来自龙舟运营与赛事组织一线的管理团队</span></div></li>
-<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b>安全保障体系</b><span>救生装备、安全预案与现场管控全流程覆盖</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="re.f1t">横琴天沐琴台水上运动场景</b><span data-i18n="re.f1d">环境开阔、水质优良的天然水上训练场</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="re.f2t">两艘标准大龙舟</b><span data-i18n="re.f2d">满足 20 人以上团队同场竞技与训练</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="re.f3t">专业教练团队</b><span data-i18n="re.f3d">来自龙舟运营与赛事组织一线的管理团队</span></div></li>
+<li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><div><b data-i18n="re.f4t">安全保障体系</b><span data-i18n="re.f4d">救生装备、安全预案与现场管控全流程覆盖</span></div></li>
 </ul>
 </div>
 <div class="res-panel rv" style="--d:.12s">
-<h4>基地档案</h4>
-<div class="rp-row"><span>基地位置</span><b>横琴天沐琴台水域</b></div>
-<div class="rp-row"><span>船只配置</span><b>标准大龙舟 × 2<i>20 人级</i></b></div>
-<div class="rp-row"><span>教练团队</span><b>资深水上教练<i>持证上岗</i></b></div>
-<div class="rp-row"><span>安全保障</span><b>全流程护航<i>救生+预案</i></b></div>
-<div class="rp-row"><span>服务范围</span><b>企业 · 个人 · 青少年</b></div>
-<a class="btn btn-gold" href="#booking">预约基地体验</a>
+<h4 data-i18n="re.pt">基地档案</h4>
+<div class="rp-row"><span data-i18n="re.r1l">基地位置</span><b data-i18n="re.r1v">横琴天沐琴台水域</b></div>
+<div class="rp-row"><span data-i18n="re.r2l">船只配置</span><b><span data-i18n="re.r2v">标准大龙舟 × 2</span><i data-i18n="re.r2i">20 人级</i></b></div>
+<div class="rp-row"><span data-i18n="re.r3l">教练团队</span><b><span data-i18n="re.r3v">资深水上教练</span><i data-i18n="re.r3i">持证上岗</i></b></div>
+<div class="rp-row"><span data-i18n="re.r4l">安全保障</span><b><span data-i18n="re.r4v">全流程护航</span><i data-i18n="re.r4i">救生+预案</i></b></div>
+<div class="rp-row"><span data-i18n="re.r5l">服务范围</span><b data-i18n="re.r5v">企业 · 个人 · 青少年</b></div>
+<a class="btn btn-gold" href="#booking" data-i18n="re.btn">预约基地体验</a>
 </div>
 </div></section>
 
 <section id="booking"><div class="c">
-<div class="tt rv"><span class="kicker">BOOKING</span><h2>课程与活动预约</h2><p>填写信息后,顾问将通过企业微信与您确认排期与活动方案</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">BOOKING</span><h2 data-i18n="bk.title">课程与活动预约</h2><p data-i18n="bk.sub">填写信息后,顾问将通过企业微信与您确认排期与活动方案</p><div class="line"></div></div>
 <div class="bk-wrap">
 <div class="rv">
-<div class="card step"><div class="no">01</div><div><h4>填写预约信息</h4><p>选择课程类型、日期与参与人数,方便顾问提前准备。</p></div></div>
-<div class="card step" style="--d:.07s"><div class="no">02</div><div><h4>添加企业微信</h4><p>提交后引导添加企业微信,获取一对一专属对接。</p></div></div>
-<div class="card step" style="--d:.14s"><div class="no">03</div><div><h4>确认排期方案</h4><p>顾问与您确认时间、人数与活动细节,完成预约。</p></div></div>
-<div class="bk-tip"><b>温馨提示</b><p>企业团建与赛事承办建议提前 3-5 天预约,便于场地与物资协调。</p></div>
+<div class="card step"><div class="no">01</div><div><h4 data-i18n="bk.s1t">填写预约信息</h4><p data-i18n="bk.s1d">选择课程类型、日期与参与人数,方便顾问提前准备。</p></div></div>
+<div class="card step" style="--d:.07s"><div class="no">02</div><div><h4 data-i18n="bk.s2t">添加企业微信</h4><p data-i18n="bk.s2d">提交后引导添加企业微信,获取一对一专属对接。</p></div></div>
+<div class="card step" style="--d:.14s"><div class="no">03</div><div><h4 data-i18n="bk.s3t">确认排期方案</h4><p data-i18n="bk.s3d">顾问与您确认时间、人数与活动细节,完成预约。</p></div></div>
+<div class="bk-tip"><b data-i18n="bk.tipt">温馨提示</b><p data-i18n="bk.tipd">企业团建与赛事承办建议提前 3-5 天预约,便于场地与物资协调。</p></div>
 </div>
 <div class="card form-card rv" style="--d:.1s">
-<h3>预约登记</h3><p class="sub">带 <em style="color:var(--rd)">*</em> 为必填项,信息仅用于预约沟通</p>
+<h3 data-i18n="bk.ft">预约登记</h3><p class="sub"><span data-i18n="bk.fsub">带</span> <em style="color:var(--rd)">*</em> <span data-i18n="bk.fsub2">为必填项,信息仅用于预约沟通</span></p>
 <form id="form" novalidate>
-<div class="honeypot" aria-hidden="true"><label for="honey">请不要填写此字段</label><input id="honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+<div class="honeypot" aria-hidden="true"><label for="honey" data-i18n="bk.honey">请不要填写此字段</label><input id="honey" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
 <div class="fg">
-<div class="f"><label for="name">姓名 <em>*</em></label><input id="name" name="name" type="text" autocomplete="name" placeholder="请输入姓名" required></div>
-<div class="f"><label for="phone">手机号 <em>*</em></label><input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="大陆 11 位或澳门 8 位" required></div>
-<div class="f"><label for="wechat">微信号</label><input id="wechat" name="wechat" type="text" autocomplete="off" placeholder="选填,方便快速联系"></div>
-<div class="f"><label for="type">预约类型 <em>*</em></label><select id="type" name="type" required><option value="">请选择预约类型</option><option>龙舟体验课</option><option>企业团建</option><option>青少年龙舟课程</option><option>龙舟赛事承办</option></select></div>
-<div class="f"><label for="date">预约日期 <em>*</em></label><input id="date" name="date" type="date" required></div>
-<div class="f"><label for="people">参与人数 <em>*</em></label><input id="people" name="people" type="number" min="1" max="200" value="1" required></div>
-<div class="f full"><label for="remark">备注</label><textarea id="remark" name="remark" placeholder="可填写企业名称、活动目标、年龄段等信息"></textarea></div>
+<div class="f"><label for="name"><span data-i18n="bk.name">姓名</span> <em>*</em></label><input id="name" name="name" type="text" autocomplete="name" placeholder="请输入姓名" data-i18n-ph="bk.nameph" required></div>
+<div class="f"><label for="phone"><span data-i18n="bk.phone">手机号</span> <em>*</em></label><input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="大陆 11 位或澳门 8 位" data-i18n-ph="bk.phoneph" required></div>
+<div class="f"><label for="wechat"><span data-i18n="bk.wechat">微信号</span></label><input id="wechat" name="wechat" type="text" autocomplete="off" placeholder="选填,方便快速联系" data-i18n-ph="bk.wechatph"></div>
+<div class="f"><label for="type"><span data-i18n="bk.type">预约类型</span> <em>*</em></label><select id="type" name="type" required><option value="" data-i18n="bk.typeph">请选择预约类型</option><option data-i18n="bk.o1">龙舟体验课</option><option data-i18n="bk.o2">企业团建</option><option data-i18n="bk.o3">青少年龙舟课程</option><option data-i18n="bk.o4">龙舟赛事承办</option></select></div>
+<div class="f"><label for="date"><span data-i18n="bk.date">预约日期</span> <em>*</em></label><input id="date" name="date" type="date" required></div>
+<div class="f"><label for="people"><span data-i18n="bk.people">参与人数</span> <em>*</em></label><input id="people" name="people" type="number" min="1" max="200" value="1" required></div>
+<div class="f full"><label for="remark"><span data-i18n="bk.remark">备注</span></label><textarea id="remark" name="remark" placeholder="可填写企业名称、活动目标、年龄段等信息" data-i18n-ph="bk.remarkph"></textarea></div>
 </div>
-<div class="fmt"><button class="btn btn-gold" type="submit">提交预约</button></div>
+<div class="fmt"><button class="btn btn-gold" type="submit" data-i18n="bk.submit">提交预约</button></div>
 </form>
 <div class="form-done" id="formDone">
 <div class="fd-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-<h4>预约信息已提交</h4>
-<p>预约详情已发送至 hqycgw.com 邮箱,顾问将尽快与您联系确认。您也可以直接添加企业微信,沟通更高效。</p>
-<div class="mc-acts"><button class="btn btn-gold" id="fdWechat" type="button">添加企业微信</button><button class="btn btn-line" id="fdAgain" type="button">再次预约</button></div>
+<h4 data-i18n="bk.dt">预约信息已提交</h4>
+<p data-i18n="bk.dd">预约详情已发送至 hqycgw.com 邮箱,顾问将尽快与您联系确认。您也可以直接添加企业微信,沟通更高效。</p>
+<div class="mc-acts"><button class="btn btn-gold" id="fdWechat" type="button" data-i18n="bk.dwc">添加企业微信</button><button class="btn btn-line" id="fdAgain" type="button" data-i18n="bk.dagain">再次预约</button></div>
 </div>
 </div>
 </div>
 </div></section>
 
 <section id="about"><div class="c">
-<div class="tt rv"><span class="kicker">OUR TEAM</span><h2>团队介绍</h2><p>来自龙舟运营与赛事组织一线的管理团队</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">OUR TEAM</span><h2 data-i18n="ab.title">团队介绍</h2><p data-i18n="ab.sub">来自龙舟运营与赛事组织一线的管理团队</p><div class="line"></div></div>
 <div class="mem-wrap">
 <div class="g2">
-<article class="card mem rv"><img src="image/李泽维头像.jpg" alt="李泽维" /><div><h4>李泽维</h4><span class="role">总经理</span><p>横琴龙舟俱乐部负责人,统筹基地运营与课程体系建设。</p></div></article>
-<article class="card mem rv" style="--d:.1s"><img src="image/罗上鏗头像.jpg" alt="罗上鏗" /><div><h4>罗上鏗</h4><span class="role">副总经理</span><p>赛事运营负责人,专注赛事策划、执行与现场管理。</p></div></article>
+<article class="card mem rv"><img src="image/李泽维头像.jpg" alt="李泽维" /><div><h4>李泽维</h4><span class="role" data-i18n="ab.r1">总经理</span><p data-i18n="ab.d1">横琴龙舟俱乐部负责人,统筹基地运营与课程体系建设。</p></div></article>
+<article class="card mem rv" style="--d:.1s"><img src="image/罗上鏗头像.jpg" alt="罗上鏗" /><div><h4>罗上鏗</h4><span class="role" data-i18n="ab.r2">副总经理</span><p data-i18n="ab.d2">赛事运营负责人,专注赛事策划、执行与现场管理。</p></div></article>
 </div>
 </div>
 </div></section>
 
 <section id="social"><div class="c">
-<div class="tt rv"><span class="kicker">FOLLOW US</span><h2>社交媒体</h2><p>欢迎通过各平台关注课程动态与活动资讯</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">FOLLOW US</span><h2 data-i18n="so.title">社交媒体</h2><p data-i18n="so.sub">欢迎通过各平台关注课程动态与活动资讯</p><div class="line"></div></div>
 <div class="g4q">
-<article class="card qr rv"><img src="image/微信公众号.jpg" alt="微信公众号二维码" /><h4>微信公众号</h4><p>课程动态 · 活动资讯</p></article>
-<article class="card qr rv" style="--d:.07s"><img src="image/企业微信.jpg" alt="企业微信二维码" /><h4>企业微信</h4><p>预约对接 · 专属顾问</p></article>
-<article class="card qr rv" style="--d:.14s"><img src="image/小红书.jpg" alt="小红书二维码" /><h4>小红书</h4><p>水上运动 · 训练日常</p></article>
-<article class="card qr rv" style="--d:.21s"><img src="image/抖音.jpg" alt="抖音二维码" /><h4>抖音</h4><p>精彩瞬间 · 赛事直播</p></article>
+<article class="card qr rv"><img src="image/微信公众号.jpg" alt="微信公众号二维码" /><h4 data-i18n="so.q1t">微信公众号</h4><p data-i18n="so.q1d">课程动态 · 活动资讯</p></article>
+<article class="card qr rv" style="--d:.07s"><img src="image/企业微信.jpg" alt="企业微信二维码" /><h4 data-i18n="so.q2t">企业微信</h4><p data-i18n="so.q2d">预约对接 · 专属顾问</p></article>
+<article class="card qr rv" style="--d:.14s"><img src="image/小红书.jpg" alt="小红书二维码" /><h4 data-i18n="so.q3t">小红书</h4><p data-i18n="so.q3d">水上运动 · 训练日常</p></article>
+<article class="card qr rv" style="--d:.21s"><img src="image/抖音.jpg" alt="抖音二维码" /><h4 data-i18n="so.q4t">抖音</h4><p data-i18n="so.q4d">精彩瞬间 · 赛事直播</p></article>
 </div>
 </div></section>
 
 <section id="contact"><div class="c">
-<div class="tt rv"><span class="kicker">CONTACT</span><h2>联系我们</h2><p>欢迎来电咨询或预约到访</p><div class="line"></div></div>
+<div class="tt rv"><span class="kicker">CONTACT</span><h2 data-i18n="ct.title">联系我们</h2><p data-i18n="ct.sub">欢迎来电咨询或预约到访</p><div class="line"></div></div>
 <div class="ct">
-<article class="card rv"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div><h3>电话咨询</h3><p><b>+86 13168677659</b></p></article>
-<article class="card rv" style="--d:.08s"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><h3>电子邮箱</h3><p>hqycgw@y163.com</p></article>
-<article class="card rv" style="--d:.16s"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>公司地址</h3><p>广东省珠海市横琴粤澳深度合作区环岛东路3000号国际商务中心8楼8042</p></article>
+<article class="card rv"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div><h3 data-i18n="ct.c1t">电话咨询</h3><p><b>+86 13168677659</b></p></article>
+<article class="card rv" style="--d:.08s"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><h3 data-i18n="ct.c2t">电子邮箱</h3><p>hqycgw@y163.com</p></article>
+<article class="card rv" style="--d:.16s"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><h3 data-i18n="ct.c3t">公司地址</h3><p data-i18n="ct.c3v">广东省珠海市横琴粤澳深度合作区环岛东路3000号国际商务中心8楼8042</p></article>
 </div>
 </div></section>
 </main>
 
 <footer><div class="c">
 <div class="ft">
-<div><div class="brand"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b>横琴意诚格物</b><span>HENGQIN YICHENG GEWU</span></div></div><p class="desc">横琴意诚格物文体发展有限公司,专注于龙舟课程体验、企业团建与水上赛事服务。</p></div>
-<div><h5>快速导航</h5><ul><li><a href="#home">首页</a></li><li><a href="#services">核心业务</a></li><li><a href="#booking">课程预约</a></li><li><a href="#about">团队介绍</a></li></ul></div>
-<div><h5>业务范围</h5><ul><li>龙舟体验课</li><li>企业团建</li><li>青少年龙舟课程</li><li>龙舟赛事承办</li></ul></div>
-<div><h5>联系我们</h5><ul><li>电话:+86 13168677659</li><li>邮箱:hqycgw@y163.com</li><li>地址:珠海横琴粤澳深度合作区<br/>环岛东路3000号国际商务中心8楼8042</li></ul></div>
+<div><div class="brand"><img src="image/网页版logo-white.png" alt="横琴意诚格物 Logo" /><div class="brand-txt"><b data-i18n="brand.fb">横琴意诚格物</b><span>HENGQIN YICHENG GEWU</span></div></div><p class="desc" data-i18n="ftr.desc">横琴意诚格物文体发展有限公司,专注于龙舟课程体验、企业团建与水上赛事服务。</p></div>
+<div><h5 data-i18n="ftr.nh">快速导航</h5><ul><li><a href="#home" data-i18n="ftr.n1">首页</a></li><li><a href="#services" data-i18n="ftr.n2">核心业务</a></li><li><a href="#booking" data-i18n="ftr.n3">课程预约</a></li><li><a href="#about" data-i18n="ftr.n4">团队介绍</a></li></ul></div>
+<div><h5 data-i18n="ftr.sh">业务范围</h5><ul><li data-i18n="ftr.s1">龙舟体验课</li><li data-i18n="ftr.s2">企业团建</li><li data-i18n="ftr.s3">青少年龙舟课程</li><li data-i18n="ftr.s4">龙舟赛事承办</li></ul></div>
+<div><h5 data-i18n="ftr.ch">联系我们</h5><ul><li data-i18n="ftr.c1">电话:+86 13168677659</li><li data-i18n="ftr.c2">邮箱:hqycgw@y163.com</li><li data-i18n="ftr.c3">地址:珠海横琴粤澳深度合作区<br/>环岛东路3000号国际商务中心8楼8042</li></ul></div>
 </div>
-<div class="fb"><span>© 2026 横琴意诚格物文体发展有限公司 · 版权所有</span><span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2023117792号-3</a> <a href="#home">返回顶部 ↑</a></span></div>
+<div class="fb"><span data-i18n="ftr.copy">© 2026 横琴意诚格物文体发展有限公司 · 版权所有</span><span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2023117792号-3</a> <a href="#home" data-i18n="ftr.top">返回顶部 ↑</a></span></div>
 </div></footer>
 
 <div id="lightbox" aria-hidden="true"><div class="lb-frame"><button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="上一张">‹</button><button type="button" class="lb-btn lb-next" id="lbNext" aria-label="下一张">›</button><img id="lbImg" src="" alt=""><p class="lb-cap" id="lbCap"></p></div><button type="button" class="lb-close" id="lbClose" aria-label="关闭大图">✕</button></div>
 
-<div class="modal" id="modal" aria-hidden="true"><div class="mc" id="mc" role="dialog" aria-modal="true" aria-labelledby="mcTitle"><h3 id="mcTitle">请添加企业微信完成预约确认</h3><p>长按或截图识别二维码,即可与顾问对接预约时间与活动方案。</p><img src="image/企业微信.jpg" alt="企业微信二维码"><pre id="sum"></pre><div class="mc-acts"><button type="button" class="btn btn-gold" id="copyBtn" style="display:none">复制预约信息</button><button type="button" class="close" id="close">关闭</button></div></div></div>
+<div class="modal" id="modal" aria-hidden="true"><div class="mc" id="mc" role="dialog" aria-modal="true" aria-labelledby="mcTitle"><h3 id="mcTitle" data-i18n="mo.t">请添加企业微信完成预约确认</h3><p data-i18n="mo.p">长按或截图识别二维码,即可与顾问对接预约时间与活动方案。</p><img src="image/企业微信.jpg" alt="企业微信二维码"><pre id="sum"></pre><div class="mc-acts"><button type="button" class="btn btn-gold" id="copyBtn" style="display:none" data-i18n="mo.copy">复制预约信息</button><button type="button" class="close" id="close" data-i18n="mo.close">关闭</button></div></div></div>
 
 <div id="toast" role="status"></div>
 <button id="topBtn" type="button" aria-label="返回顶部">↑</button>
@@ -401,6 +402,294 @@ footer{border-top:1px solid var(--bd);background:rgba(3,7,14,.6);padding:54px 0 
 "use strict";
 const $=s=>document.querySelector(s);
 const $$=s=>document.querySelectorAll(s);
+const I18N={
+"zh-CN":{
+"meta.title":"横琴意诚格物｜龙舟课程预约｜企业团建｜水上赛事服务",
+"meta.desc":"横琴龙舟预约、天沐琴台龙舟体验、企业团建、青少年龙舟课程、龙舟赛事承办。横琴意诚格物文体发展有限公司,专业教练团队与安全保障体系。",
+"meta.ogTitle":"横琴意诚格物｜天沐琴台龙舟预约",
+"meta.ogDesc":"龙舟课程｜企业团建｜青少年培训｜赛事承办",
+"brand.b":"横琴意诚格物文体发展有限公司","brand.fb":"横琴意诚格物",
+"nav.home":"首页","nav.services":"核心业务","nav.gallery":"赛事风采","nav.game":"互动体验","nav.booking":"课程预约","nav.contact":"联系我们","nav.cta":"立即预约",
+"hero.t1":"横琴天沐琴台","hero.t2":"龙舟预约",
+"hero.lead":"龙舟课程 · 企业团建 · 青少年培训 · 赛事承办。依托天沐琴台水域场景与专业教练团队,为企业与个人提供安全、专业、沉浸式的水上龙舟体验。",
+"hero.cta2":"添加企业微信","hero.tr1":"专业教练团队","hero.tr2":"安全保障体系","hero.tr3":"横琴天沐琴台场景",
+"st.u1":"艘","st.l1":"标准大龙舟","st.u2":"大","st.l2":"核心业务板块","st.u3":"站式","st.l3":"定制活动服务","st.u4":"%","st.l4":"安全护航体系",
+"sv.title":"核心业务","sv.sub":"四大模块覆盖课程体验、企业活动与专业赛事服务",
+"sv.t1":"龙舟体验课","sv.d1":"面向个人及小团体,提供入门指导、上船实操与基础配合训练,零基础即可安全上手。","sv.tag1":"适合新手",
+"sv.t2":"企业团建","sv.d2":"为企业定制龙舟团建方案,含组织协作训练、趣味竞速与活动复盘,打造高凝聚力团队。","sv.tag2":"企业定制",
+"sv.t3":"青少年龙舟课程","sv.d3":"围绕体能、纪律、协作与传统文化认知,构建阶段性青训课程,培养水上运动兴趣。","sv.tag3":"青训体系",
+"sv.t4":"龙舟赛事承办","sv.d4":"提供赛事策划、执行、裁判协调、安全与现场运营一体化服务,保障赛事专业落地。","sv.tag4":"一体化运营",
+"ga.title":"赛事风采","ga.sub":"横琴「龙抬头」小龙邀请赛系列赛事现场直击——我们主办,我们见证",
+"ga.c1":"2026 横琴第二届「龙抬头」小龙邀请赛","ga.c2":"2026 横琴第二届「龙抬头」小龙邀请赛","ga.c3":"2026 横琴第二届「龙抬头」小龙邀请赛","ga.c4":"2025 横琴第一届「龙抬头」小龙环绕邀请赛","ga.c5":"2025 横琴第一届「龙抬头」小龙环绕邀请赛","ga.c6":"2025 横琴第一届「龙抬头」小龙环绕邀请赛",
+"gm.title":"互动体验 · 试试划龙舟","gm.sub":"连按空格键或点击屏幕划桨,和 AI 赛一场,提前感受竞渡节奏",
+"gm.you":"你的龙舟","gm.ai":"AI 龙舟","gm.restart":"再来一局","gm.tip":"快速点击或连按","gm.key":"空格","gm.tip2":"划桨,划得越快船越快!","gm.win":"你赢了!再赛一局?","gm.lose":"AI 率先冲线,再试一局挑战它!",
+"re.h3a":"依托横琴水域场景,","re.h3b":"构建完整水上保障能力",
+"re.p":"基地位于横琴粤澳深度合作区天沐琴台水域,配套标准龙舟、专业教练团队与完善安全体系,为课程体验与赛事活动提供一站式支持。",
+"re.f1t":"横琴天沐琴台水上运动场景","re.f1d":"环境开阔、水质优良的天然水上训练场",
+"re.f2t":"两艘标准大龙舟","re.f2d":"满足 20 人以上团队同场竞技与训练",
+"re.f3t":"专业教练团队","re.f3d":"来自龙舟运营与赛事组织一线的管理团队",
+"re.f4t":"安全保障体系","re.f4d":"救生装备、安全预案与现场管控全流程覆盖",
+"re.pt":"基地档案","re.r1l":"基地位置","re.r1v":"横琴天沐琴台水域","re.r2l":"船只配置","re.r2v":"标准大龙舟 × 2","re.r2i":"20 人级","re.r3l":"教练团队","re.r3v":"资深水上教练","re.r3i":"持证上岗","re.r4l":"安全保障","re.r4v":"全流程护航","re.r4i":"救生+预案","re.r5l":"服务范围","re.r5v":"企业 · 个人 · 青少年","re.btn":"预约基地体验",
+"bk.title":"课程与活动预约","bk.sub":"填写信息后,顾问将通过企业微信与您确认排期与活动方案",
+"bk.s1t":"填写预约信息","bk.s1d":"选择课程类型、日期与参与人数,方便顾问提前准备。",
+"bk.s2t":"添加企业微信","bk.s2d":"提交后引导添加企业微信,获取一对一专属对接。",
+"bk.s3t":"确认排期方案","bk.s3d":"顾问与您确认时间、人数与活动细节,完成预约。",
+"bk.tipt":"温馨提示","bk.tipd":"企业团建与赛事承办建议提前 3-5 天预约,便于场地与物资协调。",
+"bk.ft":"预约登记","bk.fsub":"带","bk.fsub2":"为必填项,信息仅用于预约沟通","bk.honey":"请不要填写此字段",
+"bk.name":"姓名","bk.nameph":"请输入姓名","bk.phone":"手机号","bk.phoneph":"大陆 11 位或澳门 8 位","bk.wechat":"微信号","bk.wechatph":"选填,方便快速联系","bk.type":"预约类型","bk.typeph":"请选择预约类型",
+"bk.o1":"龙舟体验课","bk.o2":"企业团建","bk.o3":"青少年龙舟课程","bk.o4":"龙舟赛事承办",
+"bk.date":"预约日期","bk.people":"参与人数","bk.remark":"备注","bk.remarkph":"可填写企业名称、活动目标、年龄段等信息",
+"bk.submit":"提交预约",
+"bk.dt":"预约信息已提交","bk.dd":"预约详情已发送至 hqycgw.com 邮箱,顾问将尽快与您联系确认。您也可以直接添加企业微信,沟通更高效。","bk.dwc":"添加企业微信","bk.dagain":"再次预约",
+"ab.title":"团队介绍","ab.sub":"来自龙舟运营与赛事组织一线的管理团队",
+"ab.r1":"总经理","ab.d1":"横琴龙舟俱乐部负责人,统筹基地运营与课程体系建设。",
+"ab.r2":"副总经理","ab.d2":"赛事运营负责人,专注赛事策划、执行与现场管理。",
+"so.title":"社交媒体","so.sub":"欢迎通过各平台关注课程动态与活动资讯",
+"so.q1t":"微信公众号","so.q1d":"课程动态 · 活动资讯","so.q2t":"企业微信","so.q2d":"预约对接 · 专属顾问","so.q3t":"小红书","so.q3d":"水上运动 · 训练日常","so.q4t":"抖音","so.q4d":"精彩瞬间 · 赛事直播",
+"ct.title":"联系我们","ct.sub":"欢迎来电咨询或预约到访",
+"ct.c1t":"电话咨询","ct.c2t":"电子邮箱","ct.c3t":"公司地址","ct.c3v":"广东省珠海市横琴粤澳深度合作区环岛东路3000号国际商务中心8楼8042",
+"ftr.desc":"横琴意诚格物文体发展有限公司,专注于龙舟课程体验、企业团建与水上赛事服务。",
+"ftr.nh":"快速导航","ftr.n1":"首页","ftr.n2":"核心业务","ftr.n3":"课程预约","ftr.n4":"团队介绍",
+"ftr.sh":"业务范围","ftr.s1":"龙舟体验课","ftr.s2":"企业团建","ftr.s3":"青少年龙舟课程","ftr.s4":"龙舟赛事承办",
+"ftr.ch":"联系我们","ftr.c1":"电话:+86 13168677659","ftr.c2":"邮箱:hqycgw@y163.com","ftr.c3":"地址:珠海横琴粤澳深度合作区<br/>环岛东路3000号国际商务中心8楼8042",
+"ftr.copy":"© 2026 横琴意诚格物文体发展有限公司 · 版权所有","ftr.top":"返回顶部 ↑",
+"mo.t":"请添加企业微信完成预约确认","mo.p":"长按或截图识别二维码,即可与顾问对接预约时间与活动方案。","mo.copy":"复制预约信息","mo.close":"关闭",
+"js.name":"请输入您的姓名","js.phone":"请输入正确的中国大陆11位或澳门8位手机号","js.date":"预约日期不能早于今天","js.type":"请选择预约类型","js.people":"参与人数需在1-200之间","js.submitting":"正在提交…","js.submit":"提交预约","js.ok":"预约已提交,顾问将尽快与您联系","js.fail":"邮件发送失败,已为您打开企业微信预约","js.copyok":"✓ 预约信息已复制,请粘贴到企业微信","js.sumt":"【预约信息】","js.sumname":"姓名","js.sumphone":"手机","js.sumtype":"预约类型","js.sumdate":"日期","js.sumpeople":"人数","js.sumwechat":"微信号","js.sumremark":"备注","js.sumfail":"邮件发送失败,请通过企业微信完成预约"
+},
+"zh-Hant":{
+"meta.title":"橫琴意誠格物｜龍舟課程預約｜企業團建｜水上賽事服務",
+"meta.desc":"橫琴龍舟預約、天沐琴台龍舟體驗、企業團建、青少年龍舟課程、龍舟賽事承辦。橫琴意誠格物文體發展有限公司,專業教練團隊與安全保障體系。",
+"meta.ogTitle":"橫琴意誠格物｜天沐琴台龍舟預約",
+"meta.ogDesc":"龍舟課程｜企業團建｜青少年培訓｜賽事承辦",
+"brand.b":"橫琴意誠格物文體發展有限公司","brand.fb":"橫琴意誠格物",
+"nav.home":"首頁","nav.services":"核心業務","nav.gallery":"賽事風采","nav.game":"互動體驗","nav.booking":"課程預約","nav.contact":"聯繫我們","nav.cta":"立即預約",
+"hero.t1":"橫琴天沐琴台","hero.t2":"龍舟預約",
+"hero.lead":"龍舟課程 · 企業團建 · 青少年培訓 · 賽事承辦。依託天沐琴台水域場景與專業教練團隊,為企業與個人提供安全、專業、沉浸式的水上龍舟體驗。",
+"hero.cta2":"添加企業微信","hero.tr1":"專業教練團隊","hero.tr2":"安全保障體系","hero.tr3":"橫琴天沐琴台場景",
+"st.u1":"艘","st.l1":"標準大龍舟","st.u2":"大","st.l2":"核心業務板塊","st.u3":"站式","st.l3":"定制活動服務","st.u4":"%","st.l4":"安全護航體系",
+"sv.title":"核心業務","sv.sub":"四大模組覆蓋課程體驗、企業活動與專業賽事服務",
+"sv.t1":"龍舟體驗課","sv.d1":"面向個人及小團體,提供入門指導、上船實操與基礎配合訓練,零基礎即可安全上手。","sv.tag1":"適合新手",
+"sv.t2":"企業團建","sv.d2":"為企業定制龍舟團建方案,含組織協作訓練、趣味競速與活動復盤,打造高凝聚力團隊。","sv.tag2":"企業定制",
+"sv.t3":"青少年龍舟課程","sv.d3":"圍繞體能、紀律、協作與傳統文化認知,構建階段性青訓課程,培養水上運動興趣。","sv.tag3":"青訓體系",
+"sv.t4":"龍舟賽事承辦","sv.d4":"提供賽事策劃、執行、裁判協調、安全與現場運營一體化服務,保障賽事專業落地。","sv.tag4":"一體化運營",
+"ga.title":"賽事風采","ga.sub":"橫琴「龍抬頭」小龍邀請賽系列賽事現場直擊——我們主辦,我們見證",
+"ga.c1":"2026 橫琴第二屆「龍抬頭」小龍邀請賽","ga.c2":"2026 橫琴第二屆「龍抬頭」小龍邀請賽","ga.c3":"2026 橫琴第二屆「龍抬頭」小龍邀請賽","ga.c4":"2025 橫琴第一屆「龍抬頭」小龍環繞邀請賽","ga.c5":"2025 橫琴第一屆「龍抬頭」小龍環繞邀請賽","ga.c6":"2025 橫琴第一屆「龍抬頭」小龍環繞邀請賽",
+"gm.title":"互動體驗 · 試試划龍舟","gm.sub":"連按空格鍵或點擊屏幕划槳,和 AI 賽一場,提前感受競渡節奏",
+"gm.you":"你的龍舟","gm.ai":"AI 龍舟","gm.restart":"再來一局","gm.tip":"快速點擊或連按","gm.key":"空格","gm.tip2":"划槳,划得越快船越快!","gm.win":"你贏了!再賽一局?","gm.lose":"AI 率先衝線,再試一局挑戰它!",
+"re.h3a":"依託橫琴水域場景,","re.h3b":"構建完整水上保障能力",
+"re.p":"基地位於橫琴粵澳深度合作區天沐琴台水域,配套標準龍舟、專業教練團隊與完善安全體系,為課程體驗與賽事活動提供一站式支持。",
+"re.f1t":"橫琴天沐琴台水上運動場景","re.f1d":"環境開闊、水質優良的天然水上訓練場",
+"re.f2t":"兩艘標準大龍舟","re.f2d":"滿足 20 人以上團隊同場競技與訓練",
+"re.f3t":"專業教練團隊","re.f3d":"來自龍舟運營與賽事組織一線的管理團隊",
+"re.f4t":"安全保障體系","re.f4d":"救生裝備、安全預案與現場管控全流程覆蓋",
+"re.pt":"基地檔案","re.r1l":"基地位置","re.r1v":"橫琴天沐琴台水域","re.r2l":"船隻配置","re.r2v":"標準大龍舟 × 2","re.r2i":"20 人級","re.r3l":"教練團隊","re.r3v":"資深水上教練","re.r3i":"持證上崗","re.r4l":"安全保障","re.r4v":"全流程護航","re.r4i":"救生+預案","re.r5l":"服務範圍","re.r5v":"企業 · 個人 · 青少年","re.btn":"預約基地體驗",
+"bk.title":"課程與活動預約","bk.sub":"填寫信息後,顧問將通過企業微信與您確認排期與活動方案",
+"bk.s1t":"填寫預約信息","bk.s1d":"選擇課程類型、日期與參與人數,方便顧問提前準備。",
+"bk.s2t":"添加企業微信","bk.s2d":"提交後引導添加企業微信,獲取一對一專屬對接。",
+"bk.s3t":"確認排期方案","bk.s3d":"顧問與您確認時間、人數與活動細節,完成預約。",
+"bk.tipt":"溫馨提示","bk.tipd":"企業團建與賽事承辦建議提前 3-5 天預約,便於場地與物資協調。",
+"bk.ft":"預約登記","bk.fsub":"帶","bk.fsub2":"為必填項,信息僅用於預約溝通","bk.honey":"請不要填寫此欄位",
+"bk.name":"姓名","bk.nameph":"請輸入姓名","bk.phone":"手機號","bk.phoneph":"大陸 11 位或澳門 8 位","bk.wechat":"微信號","bk.wechatph":"選填,方便快速聯繫","bk.type":"預約類型","bk.typeph":"請選擇預約類型",
+"bk.o1":"龍舟體驗課","bk.o2":"企業團建","bk.o3":"青少年龍舟課程","bk.o4":"龍舟賽事承辦",
+"bk.date":"預約日期","bk.people":"參與人數","bk.remark":"備註","bk.remarkph":"可填寫企業名稱、活動目標、年齡段等信息",
+"bk.submit":"提交預約",
+"bk.dt":"預約信息已提交","bk.dd":"預約詳情已發送至 hqycgw.com 郵箱,顧問將盡快與您聯繫確認。您也可以直接添加企業微信,溝通更高效。","bk.dwc":"添加企業微信","bk.dagain":"再次預約",
+"ab.title":"團隊介紹","ab.sub":"來自龍舟運營與賽事組織一線的管理團隊",
+"ab.r1":"總經理","ab.d1":"橫琴龍舟俱樂部負責人,統籌基地運營與課程體系建設。",
+"ab.r2":"副總經理","ab.d2":"賽事運營負責人,專注賽事策劃、執行與現場管理。",
+"so.title":"社交媒體","so.sub":"歡迎通過各平台關注課程動態與活動資訊",
+"so.q1t":"微信公眾號","so.q1d":"課程動態 · 活動資訊","so.q2t":"企業微信","so.q2d":"預約對接 · 專屬顧問","so.q3t":"小紅書","so.q3d":"水上運動 · 訓練日常","so.q4t":"抖音","so.q4d":"精彩瞬間 · 賽事直播",
+"ct.title":"聯繫我們","ct.sub":"歡迎來電諮詢或預約到訪",
+"ct.c1t":"電話諮詢","ct.c2t":"電子郵箱","ct.c3t":"公司地址","ct.c3v":"廣東省珠海市橫琴粵澳深度合作區環島東路3000號國際商務中心8樓8042",
+"ftr.desc":"橫琴意誠格物文體發展有限公司,專注於龍舟課程體驗、企業團建與水上賽事服務。",
+"ftr.nh":"快速導航","ftr.n1":"首頁","ftr.n2":"核心業務","ftr.n3":"課程預約","ftr.n4":"團隊介紹",
+"ftr.sh":"業務範圍","ftr.s1":"龍舟體驗課","ftr.s2":"企業團建","ftr.s3":"青少年龍舟課程","ftr.s4":"龍舟賽事承辦",
+"ftr.ch":"聯繫我們","ftr.c1":"電話:+86 13168677659","ftr.c2":"郵箱:hqycgw@y163.com","ftr.c3":"地址:珠海橫琴粵澳深度合作區<br/>環島東路3000號國際商務中心8樓8042",
+"ftr.copy":"© 2026 橫琴意誠格物文體發展有限公司 · 版權所有","ftr.top":"返回頂部 ↑",
+"mo.t":"請添加企業微信完成預約確認","mo.p":"長按或截圖識別二維碼,即可與顧問對接預約時間與活動方案。","mo.copy":"複製預約信息","mo.close":"關閉",
+"js.name":"請輸入您的姓名","js.phone":"請輸入正確的中國大陸11位或澳門8位手機號","js.date":"預約日期不能早於今天","js.type":"請選擇預約類型","js.people":"參與人數需在1-200之間","js.submitting":"正在提交…","js.submit":"提交預約","js.ok":"預約已提交,顧問將盡快與您聯繫","js.fail":"郵件發送失敗,已為您打開企業微信預約","js.copyok":"✓ 預約信息已複製,請粘貼到企業微信","js.sumt":"【預約信息】","js.sumname":"姓名","js.sumphone":"手機","js.sumtype":"預約類型","js.sumdate":"日期","js.sumpeople":"人數","js.sumwechat":"微信號","js.sumremark":"備註","js.sumfail":"郵件發送失敗,請通過企業微信完成預約"
+},
+"en":{
+"meta.title":"Hengqin Yicheng Gewu｜Dragon Boat Booking｜Corporate Team Building｜Water Race Services",
+"meta.desc":"Dragon boat booking in Hengqin, Tianmu Qintai dragon boat experiences, corporate team building, youth dragon boat courses and race hosting. Professional coaching team with a complete safety system.",
+"meta.ogTitle":"Hengqin Yicheng Gewu｜Tianmu Qintai Dragon Boat Booking",
+"meta.ogDesc":"Dragon boat courses ｜ Corporate team building ｜ Youth training ｜ Race hosting",
+"brand.b":"Hengqin Yicheng Gewu Sports & Culture Co., Ltd.","brand.fb":"Hengqin Yicheng Gewu",
+"nav.home":"Home","nav.services":"Core Services","nav.gallery":"Gallery","nav.game":"Play & Race","nav.booking":"Booking","nav.contact":"Contact","nav.cta":"Book Now",
+"hero.t1":"Hengqin Tianmu Qintai","hero.t2":"Dragon Boat Booking",
+"hero.lead":"Dragon boat courses · Corporate team building · Youth training · Race hosting. Based at the Tianmu Qintai water venue with a professional coaching team, we provide safe, professional and immersive on-water dragon boat experiences for companies and individuals.",
+"hero.cta2":"Add WeChat","hero.tr1":"Professional coaching team","hero.tr2":"Complete safety system","hero.tr3":"Tianmu Qintai water venue, Hengqin",
+"st.u1":"boats","st.l1":"Standard dragon boats","st.u2":"modules","st.l2":"Core business modules","st.u3":"one-stop","st.l3":"Custom event services","st.u4":"%","st.l4":"Safety coverage",
+"sv.title":"Core Services","sv.sub":"Four modules covering courses, corporate events and professional race services",
+"sv.t1":"Dragon Boat Experience","sv.d1":"Beginner-friendly sessions with guided instruction, on-water practice and basic teamwork drills — safe to start from zero.","sv.tag1":"For beginners",
+"sv.t2":"Corporate Team Building","sv.d2":"Customised dragon boat programmes: coordination training, fun sprints and activity reviews to build a stronger, more cohesive team.","sv.tag2":"Corporate",
+"sv.t3":"Youth Dragon Boat Course","sv.d3":"A staged youth training system combining fitness, discipline, teamwork and traditional culture to inspire a love of water sports.","sv.tag3":"Youth training",
+"sv.t4":"Race Hosting","sv.d4":"End-to-end event services: planning, execution, officiating coordination, safety and on-site operations.","sv.tag4":"Full service",
+"ga.title":"Event Highlights","ga.sub":"Behind the scenes of the Hengqin 'Dragon Raises Head' invitational series — hosted by us, witnessed by us.",
+"ga.c1":"2026 2nd Hengqin 'Dragon Raises Head' Little Dragon Invitational","ga.c2":"2026 2nd Hengqin 'Dragon Raises Head' Little Dragon Invitational","ga.c3":"2026 2nd Hengqin 'Dragon Raises Head' Little Dragon Invitational","ga.c4":"2025 1st Hengqin 'Dragon Raises Head' Little Dragon Surround Invitational","ga.c5":"2025 1st Hengqin 'Dragon Raises Head' Little Dragon Surround Invitational","ga.c6":"2025 1st Hengqin 'Dragon Raises Head' Little Dragon Surround Invitational",
+"gm.title":"Interactive · Try Dragon Boat Racing","gm.sub":"Press Space or tap the screen to paddle and race against the AI.",
+"gm.you":"Your boat","gm.ai":"AI boat","gm.restart":"Play again","gm.tip":"Click fast or hold","gm.key":"Space","gm.tip2":"to paddle — the faster you paddle, the faster you go!","gm.win":"You win! Ready for another race?","gm.lose":"The AI crossed the line first — try again!",
+"re.h3a":"Built on Hengqin's waters,","re.h3b":"a complete on-water capability",
+"re.p":"Located at the Tianmu Qintai water venue in the Guangdong-Macao In-Depth Cooperation Zone, our base is equipped with standard dragon boats, a professional coaching team and a complete safety system — one-stop support for courses and events.",
+"re.f1t":"Tianmu Qintai water venue, Hengqin","re.f1d":"A spacious natural training site with excellent water quality",
+"re.f2t":"Two standard dragon boats","re.f2d":"Enough for teams of 20+ to train and race together",
+"re.f3t":"Professional coaching team","re.f3d":"A management team from dragon boat operations and race organisation",
+"re.f4t":"Complete safety system","re.f4d":"Life-saving equipment, safety plans and on-site control at every stage",
+"re.pt":"Base Profile","re.r1l":"Location","re.r1v":"Tianmu Qintai water area","re.r2l":"Fleet","re.r2v":"Standard dragon boats × 2","re.r2i":"20 paddlers","re.r3l":"Coaching","re.r3v":"Senior water coaches","re.r3i":"Certified","re.r4l":"Safety","re.r4v":"Full-route support","re.r4i":"Life-saving + plans","re.r5l":"Scope","re.r5v":"Corporate · Individual · Youth","re.btn":"Book a Base Visit",
+"bk.title":"Book Courses & Activities","bk.sub":"Fill in the form and our consultant will confirm the schedule and programme via WeChat.",
+"bk.s1t":"Fill in booking details","bk.s1d":"Choose course type, date and party size so we can prepare in advance.",
+"bk.s2t":"Add WeChat","bk.s2d":"After submitting, you will be guided to add our WeChat for one-on-one service.",
+"bk.s3t":"Confirm the plan","bk.s3d":"We confirm the time, numbers and details to complete your booking.",
+"bk.tipt":"Tips","bk.tipd":"For corporate team building and race hosting, please book 3–5 days in advance to allow time for venue and equipment coordination.",
+"bk.ft":"Booking Form","bk.fsub":"Fields marked","bk.fsub2":"are required. Information is used for booking only.","bk.honey":"Please do not fill in this field",
+"bk.name":"Name","bk.nameph":"Enter your name","bk.phone":"Mobile","bk.phoneph":"11 digits (mainland) or 8 (Macau)","bk.wechat":"WeChat ID","bk.wechatph":"Optional — for faster contact","bk.type":"Booking type","bk.typeph":"Select a booking type",
+"bk.o1":"Dragon Boat Experience","bk.o2":"Corporate Team Building","bk.o3":"Youth Dragon Boat Course","bk.o4":"Race Hosting",
+"bk.date":"Booking date","bk.people":"Party size","bk.remark":"Notes","bk.remarkph":"Company name, goals, age range, etc.",
+"bk.submit":"Submit Booking",
+"bk.dt":"Booking submitted","bk.dd":"Your booking details have been sent to us — a consultant will contact you soon. You can also add our WeChat for faster communication.","bk.dwc":"Add WeChat","bk.dagain":"Book again",
+"ab.title":"Our Team","ab.sub":"A management team from dragon boat operations and race organisation",
+"ab.r1":"General Manager","ab.d1":"Head of the Hengqin Dragon Boat Club, overseeing base operations and the course system.",
+"ab.r2":"Deputy General Manager","ab.d2":"Head of race operations, focused on event planning, execution and on-site management.",
+"so.title":"Social Media","so.sub":"Follow us for course updates and event news",
+"so.q1t":"WeChat Official Account","so.q1d":"News & updates","so.q2t":"WeChat (Business)","so.q2d":"Booking & consultant","so.q3t":"Xiaohongshu (RED)","so.q3d":"Water sports & training","so.q4t":"Douyin","so.q4d":"Highlights & live streams",
+"ct.title":"Contact Us","ct.sub":"Call us or book a visit",
+"ct.c1t":"Phone","ct.c2t":"Email","ct.c3t":"Address","ct.c3v":"Rm 8042, 8/F, International Business Center, 3000 Huandao East Road, Hengqin Guangdong-Macao In-Depth Cooperation Zone, Zhuhai, Guangdong, China",
+"ftr.desc":"Hengqin Yicheng Gewu Sports & Culture Development Co., Ltd. — dedicated to dragon boat courses, corporate team building and on-water race services.",
+"ftr.nh":"Quick Links","ftr.n1":"Home","ftr.n2":"Core Services","ftr.n3":"Booking","ftr.n4":"Our Team",
+"ftr.sh":"Services","ftr.s1":"Dragon Boat Experience","ftr.s2":"Corporate Team Building","ftr.s3":"Youth Dragon Boat Course","ftr.s4":"Race Hosting",
+"ftr.ch":"Contact","ftr.c1":"Phone: +86 13168677659","ftr.c2":"Email: hqycgw@y163.com","ftr.c3":"Address: 3000 Huandao East Road, Hengqin G-M In-Depth Cooperation Zone<br/>International Business Center, 8F, Rm 8042",
+"ftr.copy":"© 2026 Hengqin Yicheng Gewu Sports & Culture Development Co., Ltd. All rights reserved.","ftr.top":"Back to top ↑",
+"mo.t":"Add our WeChat to confirm your booking","mo.p":"Long-press or screenshot the QR code to connect with a consultant about timing and programme.","mo.copy":"Copy booking info","mo.close":"Close",
+"js.name":"Please enter your name","js.phone":"Please enter a valid mainland China 11-digit or Macau 8-digit mobile number","js.date":"Booking date cannot be earlier than today","js.type":"Please select a booking type","js.people":"Party size must be between 1 and 200","js.submitting":"Submitting…","js.submit":"Submit Booking","js.ok":"Booking submitted — our consultant will contact you soon","js.fail":"Email failed — WeChat booking opened","js.copyok":"✓ Booking info copied — paste it in WeChat","js.sumt":"Booking Details","js.sumname":"Name","js.sumphone":"Mobile","js.sumtype":"Type","js.sumdate":"Date","js.sumpeople":"Party size","js.sumwechat":"WeChat","js.sumremark":"Notes","js.sumfail":"Email sending failed — please complete the booking via WeChat"
+},
+"pt":{
+"meta.title":"Hengqin Yicheng Gewu｜Reserva de Barcos-Dragão｜Team Building Empresarial｜Serviços de Provas Aquáticas",
+"meta.desc":"Reserva de barcos-dragão em Hengqin, experiências no cenário aquático de Tianmu Qintai, team building empresarial, cursos juvenis e organização de provas. Equipa de treinadores profissionais com sistema de segurança completo.",
+"meta.ogTitle":"Hengqin Yicheng Gewu｜Reserva de Barcos-Dragão em Tianmu Qintai",
+"meta.ogDesc":"Cursos de barco-dragão ｜ Team building empresarial ｜ Formação juvenil ｜ Organização de provas",
+"brand.b":"Hengqin Yicheng Gewu — Desportos e Cultura, Lda.","brand.fb":"Hengqin Yicheng Gewu",
+"nav.home":"Início","nav.services":"Serviços","nav.gallery":"Galeria","nav.game":"Jogo & Regata","nav.booking":"Reservas","nav.contact":"Contactos","nav.cta":"Reservar Já",
+"hero.t1":"Hengqin Tianmu Qintai","hero.t2":"Reserva de Barcos-Dragão",
+"hero.lead":"Cursos de barco-dragão · Team building empresarial · Formação juvenil · Organização de provas. Com base no cenário aquático de Tianmu Qintai e numa equipa de treinadores profissionais, oferecemos experiências de barco-dragão seguras, profissionais e imersivas para empresas e particulares.",
+"hero.cta2":"Adicionar WeChat","hero.tr1":"Equipa de treinadores profissionais","hero.tr2":"Sistema de segurança completo","hero.tr3":"Cenário aquático Tianmu Qintai, Hengqin",
+"st.u1":"barcos","st.l1":"Barcos-dragão padrão","st.u2":"módulos","st.l2":"Módulos de negócio","st.u3":"serviço único","st.l3":"Serviços de eventos personalizados","st.u4":"%","st.l4":"Cobertura de segurança",
+"sv.title":"Serviços Principais","sv.sub":"Quatro módulos cobrem cursos, eventos empresariais e organização profissional de provas",
+"sv.t1":"Experiência de Barco-Dragão","sv.d1":"Sessões para iniciantes com orientação, prática na água e treino básico de equipa — comece do zero em segurança.","sv.tag1":"Para iniciantes",
+"sv.t2":"Team Building Empresarial","sv.d2":"Programas de barco-dragão à medida: treino de coordenação, regatas divertidas e revisão da atividade para fortalecer a equipa.","sv.tag2":"Empresarial",
+"sv.t3":"Curso Juvenil de Barco-Dragão","sv.d3":"Um sistema de formação por fases que combina condicionamento físico, disciplina, trabalho de equipa e cultura tradicional.","sv.tag3":"Formação juvenil",
+"sv.t4":"Organização de Provas","sv.d4":"Serviços integrados: planeamento, execução, coordenação de arbitragem, segurança e operações no local.","sv.tag4":"Serviço completo",
+"ga.title":"Destaques de Provas","ga.sub":"Bastidores da série de convites 'O Dragão Levanta a Cabeça' de Hengqin — nós organizamos, nós testemunhamos.",
+"ga.c1":"2.º Convite 'O Dragão Levanta a Cabeça' de Hengqin 2026","ga.c2":"2.º Convite 'O Dragão Levanta a Cabeça' de Hengqin 2026","ga.c3":"2.º Convite 'O Dragão Levanta a Cabeça' de Hengqin 2026","ga.c4":"1.º Convite 'O Dragão Levanta a Cabeça' de Hengqin 2025","ga.c5":"1.º Convite 'O Dragão Levanta a Cabeça' de Hengqin 2025","ga.c6":"1.º Convite 'O Dragão Levanta a Cabeça' de Hengqin 2025",
+"gm.title":"Interativo · Experimente Remar","gm.sub":"Prima Espaço ou toque no ecrã para remar e correr contra a IA.",
+"gm.you":"O teu barco","gm.ai":"Barco da IA","gm.restart":"Jogar de novo","gm.tip":"Clique rápido ou mantenha","gm.key":"Espaço","gm.tip2":"para remar — quanto mais rema, mais rápido vai!","gm.win":"Ganhaste! Pronto para outra regata?","gm.lose":"A IA chegou primeiro — tenta outra vez!",
+"re.h3a":"Com base nas águas de Hengqin,","re.h3b":"uma capacidade aquática completa",
+"re.p":"Localizada no cenário aquático de Tianmu Qintai, na Zona de Cooperação Aprofundada Guangdong-Macau, a nossa base dispõe de barcos-dragão padrão, uma equipa de treinadores profissionais e um sistema de segurança completo — apoio integrado para cursos e eventos.",
+"re.f1t":"Cenário aquático Tianmu Qintai, Hengqin","re.f1d":"Um campo de treino natural, amplo e com excelente qualidade de água",
+"re.f2t":"Dois barcos-dragão padrão","re.f2d":"Suficientes para equipas de 20+ treinarem e competirem juntas",
+"re.f3t":"Equipa de treinadores profissionais","re.f3d":"Uma equipa de gestão com experiência em operação de barcos-dragão e organização de provas",
+"re.f4t":"Sistema de segurança completo","re.f4d":"Equipamento salva-vidas, planos de segurança e controlo no local em todas as fases",
+"re.pt":"Perfil da Base","re.r1l":"Localização","re.r1v":"Cenário aquático Tianmu Qintai","re.r2l":"Embarcações","re.r2v":"Barcos-dragão padrão × 2","re.r2i":"20 remadores","re.r3l":"Treinadores","re.r3v":"Treinadores aquáticos seniores","re.r3i":"Certificados","re.r4l":"Segurança","re.r4v":"Apoio em todo o percurso","re.r4i":"Salva-vidas + planos","re.r5l":"Âmbito","re.r5v":"Empresas · Particulares · Jovens","re.btn":"Reservar Visita à Base",
+"bk.title":"Reservar Cursos e Atividades","bk.sub":"Preencha o formulário e o nosso consultor confirmará o horário e o programa via WeChat.",
+"bk.s1t":"Preencher os dados","bk.s1d":"Escolha o tipo de curso, a data e o número de participantes para nos prepararmos.",
+"bk.s2t":"Adicionar WeChat","bk.s2d":"Após o envio, será guiado para adicionar o nosso WeChat para um atendimento personalizado.",
+"bk.s3t":"Confirmar o plano","bk.s3d":"Confirmamos hora, números e detalhes para concluir a reserva.",
+"bk.tipt":"Dica","bk.tipd":"Para team building e organização de provas, reserve com 3-5 dias de antecedência para coordenação de espaço e equipamento.",
+"bk.ft":"Formulário de Reserva","bk.fsub":"Os campos marcados com","bk.fsub2":"são obrigatórios. As informações são usadas apenas para a reserva.","bk.honey":"Não preencha este campo",
+"bk.name":"Nome","bk.nameph":"Introduza o seu nome","bk.phone":"Telemóvel","bk.phoneph":"11 dígitos (continente) ou 8 (Macau)","bk.wechat":"ID do WeChat","bk.wechatph":"Opcional","bk.type":"Tipo de reserva","bk.typeph":"Selecione o tipo",
+"bk.o1":"Experiência de Barco-Dragão","bk.o2":"Team Building Empresarial","bk.o3":"Curso Juvenil de Barco-Dragão","bk.o4":"Organização de Provas",
+"bk.date":"Data da reserva","bk.people":"N.º de participantes","bk.remark":"Observações","bk.remarkph":"Nome da empresa, objetivos, faixa etária, etc.",
+"bk.submit":"Enviar Reserva",
+"bk.dt":"Reserva enviada","bk.dd":"Os detalhes da sua reserva foram enviados — um consultor entrará em contacto em breve. Também pode adicionar o nosso WeChat para uma comunicação mais rápida.","bk.dwc":"Adicionar WeChat","bk.dagain":"Reservar novamente",
+"ab.title":"A Nossa Equipa","ab.sub":"Uma equipa de gestão com experiência em operação de barcos-dragão e organização de provas",
+"ab.r1":"Diretor-Geral","ab.d1":"Responsável pelo Hengqin Dragon Boat Club, coordenando as operações da base e o sistema de cursos.",
+"ab.r2":"Diretor-Geral Adjunto","ab.d2":"Responsável pela operação de provas, focado no planeamento, execução e gestão no local.",
+"so.title":"Redes Sociais","so.sub":"Siga-nos para novidades de cursos e eventos",
+"so.q1t":"Conta Oficial WeChat","so.q1d":"Novidades e eventos","so.q2t":"WeChat Empresarial","so.q2d":"Reservas e consultores","so.q3t":"Xiaohongshu","so.q3d":"Desportos aquáticos e treinos","so.q4t":"Douyin","so.q4d":"Destaques e transmissões",
+"ct.title":"Contactos","ct.sub":"Ligue-nos ou agende uma visita",
+"ct.c1t":"Telefone","ct.c2t":"Email","ct.c3t":"Morada","ct.c3v":"Sala 8042, 8.º andar, International Business Center, 3000 Huandao East Road, Zona de Cooperação Aprofundada Guangdong-Macau, Hengqin, Zhuhai, Guangdong, China",
+"ftr.desc":"Hengqin Yicheng Gewu — Desportos e Cultura, Lda., dedicada a cursos de barco-dragão, team building empresarial e serviços de provas aquáticas.",
+"ftr.nh":"Atalhos","ftr.n1":"Início","ftr.n2":"Serviços","ftr.n3":"Reservas","ftr.n4":"A Nossa Equipa",
+"ftr.sh":"Serviços","ftr.s1":"Experiência de Barco-Dragão","ftr.s2":"Team Building Empresarial","ftr.s3":"Curso Juvenil de Barco-Dragão","ftr.s4":"Organização de Provas",
+"ftr.ch":"Contactos","ftr.c1":"Telefone: +86 13168677659","ftr.c2":"Email: hqycgw@y163.com","ftr.c3":"Morada: 3000 Huandao East Road, Hengqin<br/>International Business Center, 8.º andar, Sala 8042",
+"ftr.copy":"© 2026 Hengqin Yicheng Gewu — Desportos e Cultura, Lda. Todos os direitos reservados.","ftr.top":"Voltar ao topo ↑",
+"mo.t":"Adicione o nosso WeChat para confirmar a reserva","mo.p":"Mantenha premido ou faça captura do código QR para falar com um consultor sobre horários e programas.","mo.copy":"Copiar dados da reserva","mo.close":"Fechar",
+"js.name":"Por favor, introduza o seu nome","js.phone":"Introduza um telemóvel válido da China continental (11 dígitos) ou de Macau (8 dígitos)","js.date":"A data da reserva não pode ser anterior a hoje","js.type":"Por favor, selecione o tipo de reserva","js.people":"O número de participantes deve estar entre 1 e 200","js.submitting":"A enviar…","js.submit":"Enviar Reserva","js.ok":"Reserva enviada — o consultor entrará em contacto em breve","js.fail":"Falha no email — abrimos a reserva via WeChat","js.copyok":"✓ Dados copiados — cole no WeChat","js.sumt":"Detalhes da Reserva","js.sumname":"Nome","js.sumphone":"Telemóvel","js.sumtype":"Tipo","js.sumdate":"Data","js.sumpeople":"Participantes","js.sumwechat":"WeChat","js.sumremark":"Observações","js.sumfail":"Falha no envio do email — conclua a reserva via WeChat"
+},
+"es":{
+"meta.title":"Hengqin Yicheng Gewu｜Reserva de Botes de Dragón｜Team Building Empresarial｜Servicios de Regatas",
+"meta.desc":"Reserva de botes de dragón en Hengqin, experiencias en el escenario acuático de Tianmu Qintai, team building empresarial, cursos juveniles y organización de regatas. Equipo de entrenadores profesionales con sistema de seguridad completo.",
+"meta.ogTitle":"Hengqin Yicheng Gewu｜Reserva de Botes de Dragón en Tianmu Qintai",
+"meta.ogDesc":"Cursos de bote de dragón ｜ Team building empresarial ｜ Formación juvenil ｜ Organización de regatas",
+"brand.b":"Hengqin Yicheng Gewu Deportes y Cultura, S.L.","brand.fb":"Hengqin Yicheng Gewu",
+"nav.home":"Inicio","nav.services":"Servicios","nav.gallery":"Galería","nav.game":"Juego y Regata","nav.booking":"Reservas","nav.contact":"Contacto","nav.cta":"Reservar Ahora",
+"hero.t1":"Hengqin Tianmu Qintai","hero.t2":"Reserva de Botes de Dragón",
+"hero.lead":"Cursos de bote de dragón · Team building empresarial · Formación juvenil · Organización de regatas. Con base en el escenario acuático de Tianmu Qintai y un equipo profesional de entrenadores, ofrecemos experiencias seguras, profesionales e inmersivas para empresas y particulares.",
+"hero.cta2":"Añadir WeChat","hero.tr1":"Equipo profesional de entrenadores","hero.tr2":"Sistema de seguridad completo","hero.tr3":"Escenario acuático Tianmu Qintai, Hengqin",
+"st.u1":"botes","st.l1":"Botes de dragón estándar","st.u2":"módulos","st.l2":"Módulos de negocio","st.u3":"integral","st.l3":"Servicios personalizados","st.u4":"%","st.l4":"Cobertura de seguridad",
+"sv.title":"Servicios Principales","sv.sub":"Cuatro módulos que cubren cursos, eventos empresariales y organización profesional de regatas",
+"sv.t1":"Experiencia de Bote de Dragón","sv.d1":"Sesiones para principiantes con orientación, práctica en el agua y entrenamiento básico de equipo: empieza desde cero con seguridad.","sv.tag1":"Para principiantes",
+"sv.t2":"Team Building Empresarial","sv.d2":"Programas de bote de dragón a medida: entrenamiento de coordinación, regatas divertidas y revisión de la actividad para fortalecer el equipo.","sv.tag2":"Empresarial",
+"sv.t3":"Curso Juvenil de Bote de Dragón","sv.d3":"Un sistema de formación por fases que combina condición física, disciplina, trabajo en equipo y cultura tradicional.","sv.tag3":"Formación juvenil",
+"sv.t4":"Organización de Regatas","sv.d4":"Servicios integrales: planificación, ejecución, coordinación de árbitros, seguridad y operaciones en el lugar.","sv.tag4":"Servicio completo",
+"ga.title":"Galería de Regatas","ga.sub":"Entre bastidores de la serie de invitaciones 'El Dragón Levanta la Cabeza' de Hengqin: nosotros organizamos, nosotros lo vivimos.",
+"ga.c1":"2.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin 2026","ga.c2":"2.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin 2026","ga.c3":"2.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin 2026","ga.c4":"1.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin 2025","ga.c5":"1.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin 2025","ga.c6":"1.ª Invitación 'El Dragón Levanta la Cabeza' de Hengqin 2025",
+"gm.title":"Interactivo · Prueba a Remar","gm.sub":"Pulsa Espacio o toca la pantalla para remar y competir contra la IA.",
+"gm.you":"Tu bote","gm.ai":"Bote de la IA","gm.restart":"Jugar de nuevo","gm.tip":"Haz clic rápido o mantén","gm.key":"Espacio","gm.tip2":"para remar: ¡cuanto más remes, más rápido vas!","gm.win":"¡Ganaste! ¿Listo para otra regata?","gm.lose":"La IA cruzó la meta primero: ¡inténtalo otra vez!",
+"re.h3a":"Con base en las aguas de Hengqin,","re.h3b":"una capacidad acuática completa",
+"re.p":"Ubicada en el escenario acuático de Tianmu Qintai, en la Zona de Cooperación Profunda Guangdong-Macao, nuestra base cuenta con botes de dragón estándar, un equipo profesional de entrenadores y un sistema de seguridad completo: apoyo integral para cursos y eventos.",
+"re.f1t":"Escenario acuático Tianmu Qintai, Hengqin","re.f1d":"Un campo de entrenamiento natural, amplio y de excelente calidad de agua",
+"re.f2t":"Dos botes de dragón estándar","re.f2d":"Suficientes para que equipos de 20+ entrenen y compitan juntos",
+"re.f3t":"Equipo profesional de entrenadores","re.f3d":"Un equipo directivo con experiencia en operación de botes de dragón y organización de regatas",
+"re.f4t":"Sistema de seguridad completo","re.f4d":"Equipo salvavidas, planes de seguridad y control en el lugar en cada fase",
+"re.pt":"Perfil de la Base","re.r1l":"Ubicación","re.r1v":"Zona acuática Tianmu Qintai","re.r2l":"Embarcaciones","re.r2v":"Botes de dragón estándar × 2","re.r2i":"20 remeros","re.r3l":"Entrenadores","re.r3v":"Entrenadores acuáticos sénior","re.r3i":"Certificados","re.r4l":"Seguridad","re.r4v":"Apoyo en todo el recorrido","re.r4i":"Salvavidas + planes","re.r5l":"Alcance","re.r5v":"Empresas · Particulares · Jóvenes","re.btn":"Reservar Visita a la Base",
+"bk.title":"Reservar Cursos y Actividades","bk.sub":"Rellene el formulario y nuestro consultor confirmará el horario y el programa por WeChat.",
+"bk.s1t":"Rellenar los datos","bk.s1d":"Elija el tipo de curso, la fecha y el número de participantes para que podamos prepararnos.",
+"bk.s2t":"Añadir WeChat","bk.s2d":"Tras el envío, le guiaremos para añadir nuestro WeChat y recibir atención personalizada.",
+"bk.s3t":"Confirmar el plan","bk.s3d":"Confirmamos hora, números y detalles para completar su reserva.",
+"bk.tipt":"Consejo","bk.tipd":"Para team building y organización de regatas, reserve con 3-5 días de antelación para coordinar espacio y equipo.",
+"bk.ft":"Formulario de Reserva","bk.fsub":"Los campos marcados con","bk.fsub2":"son obligatorios. La información se usa solo para la reserva.","bk.honey":"No rellene este campo",
+"bk.name":"Nombre","bk.nameph":"Introduzca su nombre","bk.phone":"Móvil","bk.phoneph":"11 dígitos (continente) o 8 (Macao)","bk.wechat":"ID de WeChat","bk.wechatph":"Opcional","bk.type":"Tipo de reserva","bk.typeph":"Seleccione el tipo",
+"bk.o1":"Experiencia de Bote de Dragón","bk.o2":"Team Building Empresarial","bk.o3":"Curso Juvenil de Bote de Dragón","bk.o4":"Organización de Regatas",
+"bk.date":"Fecha de reserva","bk.people":"N.º de participantes","bk.remark":"Notas","bk.remarkph":"Nombre de empresa, objetivos, franja de edad, etc.",
+"bk.submit":"Enviar Reserva",
+"bk.dt":"Reserva enviada","bk.dd":"Hemos recibido los detalles de su reserva: un consultor se pondrá en contacto en breve. También puede añadir nuestro WeChat para una comunicación más rápida.","bk.dwc":"Añadir WeChat","bk.dagain":"Reservar de nuevo",
+"ab.title":"Nuestro Equipo","ab.sub":"Un equipo directivo con experiencia en operación de botes de dragón y organización de regatas",
+"ab.r1":"Director General","ab.d1":"Responsable del Hengqin Dragon Boat Club, supervisando las operaciones de la base y el sistema de cursos.",
+"ab.r2":"Subdirector General","ab.d2":"Responsable de operaciones de regatas, centrado en planificación, ejecución y gestión en el lugar.",
+"so.title":"Redes Sociales","so.sub":"Síguenos para novedades de cursos y eventos",
+"so.q1t":"Cuenta Oficial WeChat","so.q1d":"Novedades y eventos","so.q2t":"WeChat Empresarial","so.q2d":"Reservas y consultores","so.q3t":"Xiaohongshu","so.q3d":"Deportes acuáticos y entrenos","so.q4t":"Douyin","so.q4d":"Destacados y retransmisiones",
+"ct.title":"Contacto","ct.sub":"Llámenos o reserve una visita",
+"ct.c1t":"Teléfono","ct.c2t":"Correo electrónico","ct.c3t":"Dirección","ct.c3v":"Oficina 8042, 8.ª planta, International Business Center, 3000 Huandao East Road, Zona de Cooperación Profunda Guangdong-Macao, Hengqin, Zhuhai, Guangdong, China",
+"ftr.desc":"Hengqin Yicheng Gewu Deportes y Cultura, S.L., dedicada a cursos de bote de dragón, team building empresarial y servicios de regatas.",
+"ftr.nh":"Accesos","ftr.n1":"Inicio","ftr.n2":"Servicios","ftr.n3":"Reservas","ftr.n4":"Nuestro Equipo",
+"ftr.sh":"Servicios","ftr.s1":"Experiencia de Bote de Dragón","ftr.s2":"Team Building Empresarial","ftr.s3":"Curso Juvenil de Bote de Dragón","ftr.s4":"Organización de Regatas",
+"ftr.ch":"Contacto","ftr.c1":"Teléfono: +86 13168677659","ftr.c2":"Email: hqycgw@y163.com","ftr.c3":"Dirección: 3000 Huandao East Road, Hengqin<br/>International Business Center, 8.ª planta, Oficina 8042",
+"ftr.copy":"© 2026 Hengqin Yicheng Gewu Deportes y Cultura, S.L. Todos los derechos reservados.","ftr.top":"Volver arriba ↑",
+"mo.t":"Añada nuestro WeChat para confirmar su reserva","mo.p":"Mantenga pulsado o haga captura del código QR para hablar con un consultor sobre horarios y programas.","mo.copy":"Copiar datos de reserva","mo.close":"Cerrar",
+"js.name":"Por favor, introduzca su nombre","js.phone":"Introduzca un móvil válido de China continental (11 dígitos) o de Macao (8 dígitos)","js.date":"La fecha de reserva no puede ser anterior a hoy","js.type":"Por favor, seleccione el tipo de reserva","js.people":"El número de participantes debe estar entre 1 y 200","js.submitting":"Enviando…","js.submit":"Enviar Reserva","js.ok":"Reserva enviada: un consultor se pondrá en contacto pronto","js.fail":"Error de email: se abrió la reserva por WeChat","js.copyok":"✓ Datos copiados: péguelos en WeChat","js.sumt":"Detalles de la Reserva","js.sumname":"Nombre","js.sumphone":"Móvil","js.sumtype":"Tipo","js.sumdate":"Fecha","js.sumpeople":"Participantes","js.sumwechat":"WeChat","js.sumremark":"Notas","js.sumfail":"Error al enviar el email: complete la reserva por WeChat"
+}
+};
+const LANG_KEY="hqycgw-lang";
+let cur=(()=>{try{const s=localStorage.getItem(LANG_KEY);return I18N[s]?s:"zh-CN"}catch(e){return "zh-CN"}})();
+const t=k=>{const v=I18N[cur][k];return v===undefined?"":v};
+const langSel=$("#langSel");
+langSel.value=cur;
+let curCapKey=null;
+function applyLang(){
+const D=I18N[cur];
+document.documentElement.lang=cur;
+$$("[data-i18n]").forEach(el=>{const k=el.dataset.i18n;if(D[k]!=null)el.textContent=D[k]});
+$$("[data-i18n-ph]").forEach(el=>{const k=el.dataset.i18nPh;if(D[k]!=null)el.placeholder=D[k]});
+$$("[data-i18n-alt]").forEach(el=>{const k=el.dataset.i18nAlt;if(D[k]!=null)el.alt=D[k]});
+$$("[data-i18n-aria]").forEach(el=>{const k=el.dataset.i18nAria;if(D[k]!=null)el.setAttribute("aria-label",D[k])});
+document.title=D["meta.title"];
+$('meta[name="description"]').content=D["meta.desc"];
+$('meta[property="og:title"]').content=D["meta.ogTitle"];
+$('meta[property="og:description"]').content=D["meta.ogDesc"];
+if(curCapKey){lbImg.alt=t(curCapKey);lbCap.textContent=t(curCapKey)}
+}
+langSel.addEventListener("change",()=>{cur=langSel.value;try{localStorage.setItem(LANG_KEY,cur)}catch(e){}applyLang();showToast(t("js.ok"))});
+applyLang();
 const hdr=$("#hdr"),menuBtn=$("#menuBtn"),navLinks=$("#navLinks"),topBtn=$("#topBtn"),
 modal=$("#modal"),mc=$("#mc"),sum=$("#sum"),copyBtn=$("#copyBtn"),openBtn=$("#open"),closeBtn=$("#close"),
 form=$("#form"),formDone=$("#formDone"),fdWechat=$("#fdWechat"),fdAgain=$("#fdAgain"),
@@ -410,7 +699,7 @@ const isMobile=()=>window.matchMedia("(max-width:760px)").matches;
 const today=()=>{const d=new Date();const p=n=>String(n).padStart(2,"0");return d.getFullYear()+"-"+p(d.getMonth()+1)+"-"+p(d.getDate())};
 const phoneOk=v=>/^(?:1[3-9]\d{9}|\d{8})$/.test((v||"").trim());
 const sanitizePhone=v=>(v||"").replace(/\D/g,"").slice(0,11);
-const showToast=t=>{toast.textContent=t;toast.classList.add("on");clearTimeout(showToast._t);showToast._t=setTimeout(()=>toast.classList.remove("on"),2400)};
+const showToast=msg=>{toast.textContent=msg;toast.classList.add("on");clearTimeout(showToast._t);showToast._t=setTimeout(()=>toast.classList.remove("on"),2400)};
 dateInput.min=today();
 menuBtn.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuBtn.setAttribute("aria-expanded",String(open));menuBtn.textContent=open?"✕":"☰"});
 navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{if(isMobile())menuBtn.click()}));
@@ -428,7 +717,7 @@ openBtn.addEventListener("click",openWechat);
 closeBtn.addEventListener("click",off);
 modal.addEventListener("click",e=>{if(e.target===modal)off()});
 let gi=0;const gl=$$(".g-item");
-const lbOpen=i=>{gi=(i+gl.length)%gl.length;const it=gl[gi];lbImg.src=it.dataset.img;lbImg.alt=it.dataset.cap;lbCap.textContent=it.dataset.cap;lightbox.classList.add("on");document.body.style.overflow="hidden"};
+const lbOpen=i=>{i=(i+gl.length)%gl.length;const it=gl[i];lbImg.src=it.dataset.img;curCapKey=it.dataset.capKey;lbImg.alt=t(curCapKey);lbCap.textContent=t(curCapKey);lightbox.classList.add("on");document.body.style.overflow="hidden"};
 const lbClose=()=>{lightbox.classList.remove("on");document.body.style.overflow=""};
 const lbNav=d=>lbOpen(gi+d);
 gl.forEach((it,i)=>it.addEventListener("click",()=>lbOpen(i)));
@@ -444,44 +733,44 @@ form.addEventListener("submit",e=>{
 e.preventDefault();
 const name=$("#name"),type=$("#type"),people=$("#people"),wechat=$("#wechat"),remark=$("#remark");
 const v=s=>s.value.trim();
-if(!v(name)){alert("请输入您的姓名");name.focus();return}
-if(!phoneOk(phone.value)){alert("请输入正确的中国大陆11位或澳门8位手机号");phone.focus();return}
-if(!dateInput.value||dateInput.value<today()){alert("预约日期不能早于今天");dateInput.focus();return}
-if(!v(type)){alert("请选择预约类型");type.focus();return}
-const n=parseInt(people.value,10);if(!n||n<1||n>200){alert("参与人数需在1-200之间");people.focus();return}
+if(!v(name)){alert(t("js.name"));name.focus();return}
+if(!phoneOk(phone.value)){alert(t("js.phone"));phone.focus();return}
+if(!dateInput.value||dateInput.value<today()){alert(t("js.date"));dateInput.focus();return}
+if(!v(type)){alert(t("js.type"));type.focus();return}
+const n=parseInt(people.value,10);if(!n||n<1||n>200){alert(t("js.people"));people.focus();return}
 const submitBtn=form.querySelector("button[type=submit]");
-submitBtn.disabled=true;submitBtn.textContent="正在提交…";
-const payload={"姓名":v(name),"手机":v(phone),"微信号":v(wechat)||"-","预约类型":v(type),"预约日期":dateInput.value,"参与人数":n+" 人","备注":v(remark)||"-","_subject":"网站预约:"+v(type),"_captcha":"false","_honey":v($("#honey"))};
+submitBtn.disabled=true;submitBtn.textContent=t("js.submitting");
+const payload={[t("js.sumname")]:v(name),[t("js.sumphone")]:v(phone),[t("js.sumwechat")]:v(wechat)||"-",[t("js.sumtype")]:v(type),[t("js.sumdate")]:dateInput.value,[t("js.sumpeople")]:n+" 人",[t("js.sumremark")]:v(remark)||"-","_subject":"网站预约:"+v(type),"_captcha":"false","_honey":v($("#honey"))};
 fetch("https://formsubmit.co/ajax/vinter@hqycgw.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload)})
 .then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json()})
 .then(j=>{if(j&&j.success!=="true")throw new Error("formsubmit rejected: "+(j.message||""))})
 .then(()=>{
-submitBtn.disabled=false;submitBtn.textContent="提交预约";form.reset();
+submitBtn.disabled=false;submitBtn.textContent=t("js.submit");form.reset();
 form.classList.add("hidden");formDone.classList.add("on");
-showToast("预约已提交,顾问将尽快与您联系");
+showToast(t("js.ok"));
 formDone.scrollIntoView({behavior:"smooth",block:"nearest"});
 })
 .catch(()=>{
-submitBtn.disabled=false;submitBtn.textContent="提交预约";
-const lines=["【预约信息】","姓名:"+v(name),"手机:"+v(phone),"预约类型:"+v(type),"日期:"+dateInput.value,"人数:"+n+" 人"];
-if(v(wechat))lines.push("微信号:"+v(wechat));
-if(v(remark))lines.push("备注:"+v(remark));
-lines.push("","邮件发送失败,请通过企业微信完成预约");
+submitBtn.disabled=false;submitBtn.textContent=t("js.submit");
+const lines=[t("js.sumt"),t("js.sumname")+":"+v(name),t("js.sumphone")+":"+v(phone),t("js.sumtype")+":"+v(type),t("js.sumdate")+":"+dateInput.value,t("js.sumpeople")+":"+n+" 人"];
+if(v(wechat))lines.push(t("js.sumwechat")+":"+v(wechat));
+if(v(remark))lines.push(t("js.sumremark")+":"+v(remark));
+lines.push("",t("js.sumfail"));
 sum.textContent=lines.join("\n");
 mc.classList.add("booking");copyBtn.style.display="inline-flex";
-showToast("邮件发送失败,已为您打开企业微信预约");
+showToast(t("js.fail"));
 on();
 });
 });
 fdWechat.addEventListener("click",openWechat);
 fdAgain.addEventListener("click",()=>{form.classList.remove("hidden");formDone.classList.remove("on")});
 copyBtn.addEventListener("click",()=>{
-const t=sum.textContent;
-const done=()=>showToast("✓ 预约信息已复制,请粘贴到企业微信");
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,()=>{fallbackCopy(t);done()})}
-else{fallbackCopy(t);done()}
+const tt=sum.textContent;
+const done=()=>showToast(t("js.copyok"));
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(tt).then(done,()=>{fallbackCopy(tt);done()})}
+else{fallbackCopy(tt);done()}
 });
-function fallbackCopy(t){const ta=document.createElement("textarea");ta.value=t;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy")}catch(err){}document.body.removeChild(ta)}
+function fallbackCopy(tt){const ta=document.createElement("textarea");ta.value=tt;ta.style.position="fixed";ta.style.opacity="0";document.body.appendChild(ta);ta.select();try{document.execCommand("copy")}catch(err){}document.body.removeChild(ta)}
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
 $$(".rv").forEach(el=>io.observe(el));
 const navIo=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){$$(".links a").forEach(a=>a.classList.toggle("active",a.getAttribute("href")==="#"+e.target.id))}})},{rootMargin:"-38% 0px -55% 0px"});
@@ -489,20 +778,21 @@ $$("main section[id]").forEach(s=>navIo.observe(s));
 const numIo=new IntersectionObserver(es=>{es.forEach(e=>{
 if(!e.isIntersecting)return;numIo.unobserve(e.target);
 const el=e.target,n=parseInt(el.dataset.n,10),t0=performance.now(),dur=1300;
-const step=t=>{const p=Math.min(1,(t-t0)/dur),v=Math.round(n*(1-Math.pow(1-p,3)));el.textContent=v;if(p<1)requestAnimationFrame(step)};
+const step=tt=>{const p=Math.min(1,(tt-t0)/dur),v=Math.round(n*(1-Math.pow(1-p,3)));el.textContent=v;if(p<1)requestAnimationFrame(step)};
 requestAnimationFrame(step);
 })},{threshold:.5});
 $$(".num").forEach(el=>numIo.observe(el));
 const cv=$("#gameCanvas"),restartBtn=$("#gameRestart"),tip=$("#gameTip"),gc=cv.getContext("2d");
+const tipHtml=tip.innerHTML;
 let W,H;
 const you={x:0,v:0,splash:0,won:false},ai={x:0,v:0,splash:0,aiT:0,won:false};
 let over=false;
 const finishX=()=>W-78;
 const fit=()=>{W=cv.clientWidth;H=window.matchMedia("(max-width:760px)").matches?250:340;const D=window.devicePixelRatio||1;cv.width=W*D;cv.height=H*D;gc.setTransform(D,0,0,D,0,0)};
-const reset=()=>{you.x=44;you.v=0;you.splash=0;ai.x=44;ai.v=0;ai.splash=0;ai.aiT=Math.random()*200+100;over=false;tip.textContent="快速点击或连按 空格 划桨,划得越快船越快!";tip.classList.remove("win","lose")};
+const reset=()=>{you.x=44;you.v=0;you.splash=0;ai.x=44;ai.v=0;ai.splash=0;ai.aiT=Math.random()*200+100;over=false;tip.innerHTML=tipHtml;applyLang();tip.classList.remove("win","lose")};
 const paddle=b=>{if(over)return;b.v+=1.9;if(b.v>7)b.v=7;b.splash=4};
 cv.addEventListener("pointerdown",()=>{if(!over)paddle(you);clearInterval(cv._hold);cv._hold=setInterval(()=>{if(!over)paddle(you)},95)});
-["pointerup","pointerleave","pointercancel"].forEach(t=>cv.addEventListener(t,()=>clearInterval(cv._hold)));
+["pointerup","pointerleave","pointercancel"].forEach(evt=>cv.addEventListener(evt,()=>clearInterval(cv._hold)));
 cv.addEventListener("contextmenu",e=>e.preventDefault());
 let sp=false;
 window.addEventListener("keydown",e=>{if(e.code!=="Space")return;e.preventDefault();if(!sp){sp=true;paddle(you)}});
@@ -529,7 +819,7 @@ gc.fillStyle="#2b1605";gc.beginPath();gc.arc(x+91,yLane-11,1.4,0,7);gc.fill();
 if(b.splash>0){b.splash--;gc.fillStyle="rgba(56,217,255,.55)";for(let i=0;i<5;i++){gc.beginPath();gc.arc(x+70+Math.random()*26,yLane+15+Math.random()*10,2+Math.random()*3,0,7);gc.fill()}}
 };
 const loop=()=>{
-const f=finishX(),t=performance.now()/1000;
+const f=finishX(),tm=performance.now()/1000;
 if(!over){
 you.v*=0.978;you.x+=you.v;
 ai.aiT-=16.6;
@@ -537,13 +827,13 @@ if(ai.aiT<=0){ai.v+=1.1+Math.random()*0.8;if(ai.v>7)ai.v=7;ai.splash=4;ai.aiT=Ma
 ai.v*=0.98;ai.x+=ai.v;
 if(you.x>=f||ai.x>=f){
 over=true;
-if(you.x>=f&&you.x>=ai.x){tip.textContent="你赢了!竞渡节奏就是这么快,再来一局?";tip.classList.add("win")}
-else{tip.textContent="AI 率先冲线,再试一局挑战它!";tip.classList.add("lose")}
+if(you.x>=f&&you.x>=ai.x){tip.textContent=t("gm.win");tip.classList.add("win")}
+else{tip.textContent=t("gm.lose");tip.classList.add("lose")}
 }
 }
 gc.fillStyle="#081c33";gc.fillRect(0,0,W,H);
 gc.strokeStyle="rgba(56,217,255,.22)";gc.lineWidth=1.5;
-for(let w=0;w<3;w++){gc.beginPath();for(let x=0;x<=W;x+=8){gc.lineTo(x,H*0.72+w*40+Math.sin((x+w*40)/46+t*2)*5)}gc.stroke()}
+for(let w=0;w<3;w++){gc.beginPath();for(let x=0;x<=W;x+=8){gc.lineTo(x,H*0.72+w*40+Math.sin((x+w*40)/46+tm*2)*5)}gc.stroke()}
 gc.setLineDash([4,8]);gc.strokeStyle="rgba(255,255,255,.12)";gc.lineWidth=1;
 gc.beginPath();gc.moveTo(0,H*0.46);gc.lineTo(W,H*0.46);gc.stroke();gc.setLineDash([]);
 gc.fillStyle="rgba(255,255,255,.5)";gc.fillRect(f-2,26,3,H-52);
