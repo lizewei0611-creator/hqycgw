@@ -786,7 +786,7 @@ $('meta[property="og:title"]').content=D["meta.ogTitle"];
 $('meta[property="og:description"]').content=D["meta.ogDesc"];
 if(curCapKey){lbImg.alt=t(curCapKey);lbCap.textContent=t(curCapKey)}
 }
-langSel.addEventListener("change",()=>{cur=langSel.value;try{localStorage.setItem(LANG_KEY,cur);const u=new URL(location.href);u.searchParams.set("lang",cur);history.replaceState(null,"",u)}catch(e){}applyLang();showToast(t("js.ok"))});
+langSel.addEventListener("change",()=>{cur=langSel.value;try{localStorage.setItem(LANG_KEY,cur);const u=new URL(location.href);u.searchParams.set("lang",cur);history.replaceState(null,"",u)}catch(e){}applyLang()});
 applyLang();
 const hdr=$("#hdr"),menuBtn=$("#menuBtn"),navLinks=$("#navLinks"),topBtn=$("#topBtn"),
 modal=$("#modal"),mc=$("#mc"),sum=$("#sum"),copyBtn=$("#copyBtn"),openBtn=$("#open"),closeBtn=$("#close"),
