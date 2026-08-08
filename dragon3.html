@@ -542,8 +542,10 @@ $$("main section[id]").forEach(s=>navIo.observe(s));
 })();
 </script>
 
+<script>
 /* 主题切换：跟随系统(auto) → 浅色(light) → 深色(dark)，与后台端共用 jk_theme 偏好；logo 随主题在白色版与红色版间切换 */
 (()=>{const KEY='jk_theme',BTN=document.getElementById('themeBtn'),SEQ=['auto','light','dark'],NAMES={auto:'主题：跟随系统',light:'主题：浅色',dark:'主题：深色'};const cur=()=>{try{const s=localStorage.getItem(KEY);return SEQ.indexOf(s)>-1?s:'auto'}catch(e){return 'auto'}};const isLight=()=>{const t=cur();if(t!=='auto')return t==='light';try{return window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches}catch(e){return false}};const applyLogo=()=>{const L=isLight();document.querySelectorAll('img.logo-theme').forEach(img=>{img.src=L?(img.dataset.logoLight||img.src):(img.dataset.logoDark||img.src)})};const apply=t=>{const r=document.documentElement;if(t==='auto')r.removeAttribute('data-theme');else r.setAttribute('data-theme',t);try{localStorage.setItem(KEY,t)}catch(e){};if(BTN)BTN.setAttribute('title',NAMES[t]);applyLogo()};if(BTN)BTN.addEventListener('click',()=>{const t=cur();apply(SEQ[(SEQ.indexOf(t)+1)%3])});try{window.matchMedia('(prefers-color-scheme: light)').addEventListener('change',()=>{if(cur()==='auto')applyLogo()})}catch(e){};apply(cur());})();
+</script>
 
 </body>
 </html>
